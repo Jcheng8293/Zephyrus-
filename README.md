@@ -21,4 +21,9 @@ Be Blue Again - JC
 >>>>>>> origin/main
 
 hooray
+<<<<<<< HEAD
 >>>>>>> JustinC
+=======
+
+deep
+>>>>>>> 3c62a9fa44a348166ca106b9012ff36a89ea13a0
