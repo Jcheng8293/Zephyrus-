@@ -1,7 +1,11 @@
 # Zephyrus-
 Android App Project
-//hello world - khongorzul 
 
+<<<<<<< HEAD
+Safe to say i have no idea what the
+hell i am doing.
+BUT i created the project file so...
+=======
 <<<<<<< HEAD
 Testing - JC
 I want a different color - JC
@@ -17,5 +21,9 @@ Be Blue Again - JC
 >>>>>>> origin/main
 
 hooray
+<<<<<<< HEAD
 
 deep
+=======
+>>>>>>> JustinC
+>>>>>>> main
