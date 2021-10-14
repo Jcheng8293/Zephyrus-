@@ -7,10 +7,10 @@ import java.util.ArrayList;
 
 public class TarotCard {
     private Drawable tarotCardImage;
-    private ArrayList<String> captions; // the things that go in the bubbles below the card, idk what they're called
+    private String[] captions; // the things that go in the bubbles below the card, idk what they're called
     private String description;
 
-    public TarotCard(File imageFile, ArrayList<String> captions, String description)
+    public TarotCard(File imageFile, String[] captions, String description)
     {
         if(description == null)
             throw new IllegalArgumentException("description cannot be null");
@@ -18,6 +18,8 @@ public class TarotCard {
             throw new IllegalArgumentException("captions cannot be null");
         if(captions.size() == 0)
             throw new IllegalArgumentException("The number of captions must be > 0");
+        if(captions.length != 3)
+            throw new IllegalArgumentException("The number of captions must be equal to 3, not " + captions.length);
         if(imageFile == null)
             throw new IllegalArgumentException("imageFile cannot be null");
         if(!imageFile.exists())
@@ -34,6 +36,7 @@ public class TarotCard {
     }
 
     public ArrayList<String> getCaptions()
+    public String[] getCaptions()
     {
         return this.captions;
     }
