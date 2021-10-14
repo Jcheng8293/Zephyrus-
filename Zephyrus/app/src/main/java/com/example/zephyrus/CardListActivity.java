@@ -16,9 +16,9 @@ public class CardListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card_list);
 
-        /****
+        /*****
          * Bottom Navigation Bar Code
-         ****/
+         *****/
         BottomNavigationView navigation = findViewById(R.id.cardlist_navigation);
 
         navigation.setSelectedItemId(R.id.cardList_nav);

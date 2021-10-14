@@ -42,9 +42,9 @@ public class CalendarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
 
-        /****
+        /*****
          * Bottom Navigation Bar Code
-         ****/
+         *****/
         BottomNavigationView navigation = findViewById(R.id.calender_navigation);
 
         navigation.setSelectedItemId(R.id.calendar_nav);
