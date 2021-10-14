@@ -3,17 +3,12 @@ package com.example.zephyrus;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class JournalActivity extends AppCompatActivity {
-
-
-    private BottomNavigationView navigation;
 
     @SuppressLint("NonConstantResourceId")
     @Override
@@ -21,27 +16,32 @@ public class JournalActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_journal);
 
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.mobile_navigation);
-        navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        /****
+         * Bottom Navigation Bar Code
+         ****/
+        BottomNavigationView navigation = findViewById(R.id.journal_navigation);
+
+        navigation.setSelectedItemId(R.id.journal_nav);
+        navigation.setOnNavigationItemSelectedListener(item -> {
             switch (item.getItemId()) {
-                case R.id.calendarActivity:
+                case R.id.calendar_nav:
                     Intent a = new Intent(JournalActivity.this, CalendarActivity.class);
                     startActivity(a);
                     break;
-                case R.id.spreadsActivity:
+                case R.id.spreads_nav:
                     Intent b = new Intent(JournalActivity.this, SpreadsActivity.class);
                     startActivity(b);
                     break;
-                case R.id.cardListActivity:
+                case R.id.cardList_nav:
                     Intent c = new Intent(JournalActivity.this, CardListActivity.class);
                     startActivity(c);
                     break;
-                case R.id.journalActivity:
+                case R.id.journal_nav:
+                    break;
+                default:
                     break;
             }
             return false;
-        }});
+        });
     }
 }

@@ -3,17 +3,12 @@ package com.example.zephyrus;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class SpreadsActivity extends AppCompatActivity {
-
-
-    private BottomNavigationView navigation;
 
     @SuppressLint("NonConstantResourceId")
     @Override
@@ -21,27 +16,32 @@ public class SpreadsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spreads);
 
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.mobile_navigation);
-        navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        /****
+         * Bottom Navigation Bar Code
+         ****/
+        BottomNavigationView navigation = findViewById(R.id.spreads_navigation);
+
+        navigation.setSelectedItemId(R.id.spreads_nav);
+        navigation.setOnNavigationItemSelectedListener(item -> {
             switch (item.getItemId()) {
-                case R.id.calendarActivity:
+                case R.id.calendar_nav:
                     Intent a = new Intent(SpreadsActivity.this, CalendarActivity.class);
                     startActivity(a);
                     break;
-                case R.id.spreadsActivity:
+                case R.id.spreads_nav:
                     break;
-                case R.id.cardListActivity:
+                case R.id.cardList_nav:
                     Intent b = new Intent(SpreadsActivity.this, CardListActivity.class);
                     startActivity(b);
                     break;
-                case R.id.journalActivity:
+                case R.id.journal_nav:
                     Intent c = new Intent(SpreadsActivity.this, JournalActivity.class);
                     startActivity(c);
                     break;
+                default:
+                    break;
             }
             return false;
-        }});
+        });
     }
 }

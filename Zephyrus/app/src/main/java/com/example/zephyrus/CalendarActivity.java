@@ -1,14 +1,11 @@
 package com.example.zephyrus;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -40,40 +37,49 @@ public class CalendarActivity extends AppCompatActivity {
         return _daysInMonth[month];
     }
 
-    @SuppressLint("NonConstantResourceId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
 
-        BottomNavigationView navigation = findViewById(R.id.mobile_navigation);
-        navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.spreadsActivity:
-                        Intent a = new Intent(CalendarActivity.this, SpreadsActivity.class);
-                        startActivity(a);
-                        break;
-                    case R.id.cardListActivity:
-                        Intent b = new Intent(CalendarActivity.this, CardListActivity.class);
-                        startActivity(b);
-                        break;
-                    case R.id.journalActivity:
-                        Intent c = new Intent(CalendarActivity.this, JournalActivity.class);
-                        startActivity(c);
-                        break;
-                }
-                return false;
+        /****
+         * Bottom Navigation Bar Code
+         ****/
+        BottomNavigationView navigation = findViewById(R.id.calender_navigation);
+
+        navigation.setSelectedItemId(R.id.calendar_nav);
+        navigation.setOnNavigationItemSelectedListener(item -> {
+            switch (item.getItemId()) {
+                case R.id.calendar_nav:
+                    break;
+                case R.id.spreads_nav:
+                    Intent a = new Intent(CalendarActivity.this, SpreadsActivity.class);
+                    startActivity(a);
+                    break;
+                case R.id.cardList_nav:
+                    Intent b = new Intent(CalendarActivity.this, CardListActivity.class);
+                    startActivity(b);
+                    break;
+                case R.id.journal_nav:
+                    Intent c = new Intent(CalendarActivity.this, JournalActivity.class);
+                    startActivity(c);
+                    break;
+                default:
+                    break;
             }
+            return false;
         });
 
+        /****
+         * Calender Code
+         ****/
         Date today = Calendar.getInstance().getTime();
         int currentMonth = today.getMonth();
 
         // sets the month label
         TextView monthLabel = findViewById(R.id.monthNameTextView);
         monthLabel.setText(monthNames[currentMonth]);
+
 
         // date calculations to find the number of rows and the starting cell
         int daysInCurrentMonth = daysInMonth(today.getMonth(), today.getYear());
