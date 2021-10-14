@@ -16,8 +16,6 @@ public class TarotCard {
             throw new IllegalArgumentException("description cannot be null");
         if(captions == null)
             throw new IllegalArgumentException("captions cannot be null");
-        if(captions.size() == 0)
-            throw new IllegalArgumentException("The number of captions must be > 0");
         if(captions.length != 3)
             throw new IllegalArgumentException("The number of captions must be equal to 3, not " + captions.length);
         if(imageFile == null)
@@ -35,7 +33,6 @@ public class TarotCard {
         return this.tarotCardImage;
     }
 
-    public ArrayList<String> getCaptions()
     public String[] getCaptions()
     {
         return this.captions;

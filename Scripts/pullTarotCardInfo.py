@@ -49,5 +49,5 @@ if __name__ == '__main__':
             m = unescape(meaning)
             lines.append(m)
 
-    with open("taroh_cards.txt", "w+", encoding='utf-8') as f:
+    with open("tarot_cards.txt", "w+", encoding='utf-8') as f:
         f.write("\n".join(lines))
