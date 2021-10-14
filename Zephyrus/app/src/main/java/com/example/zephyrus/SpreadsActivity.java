@@ -16,9 +16,9 @@ public class SpreadsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spreads);
 
-        /*****
+        /****
          * Bottom Navigation Bar Code
-         *****/
+         ****/
         BottomNavigationView navigation = findViewById(R.id.spreads_navigation);
 
         navigation.setSelectedItemId(R.id.spreads_nav);

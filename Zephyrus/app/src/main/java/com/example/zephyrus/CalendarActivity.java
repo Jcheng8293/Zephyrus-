@@ -12,15 +12,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.Calendar;
 import java.util.Date;
-import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.Calendar;
-import java.util.Date;
-
-import android.os.Bundle;
-import android.widget.TableLayout;
-import android.widget.TableRow;
-import android.widget.TextView;
 public class CalendarActivity extends AppCompatActivity {
 
     // Do NOT use this to calculate the # of days in a month, use the method daysInMonth()
@@ -50,9 +42,9 @@ public class CalendarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
 
-        /*****
+        /****
          * Bottom Navigation Bar Code
-         *****/
+         ****/
         BottomNavigationView navigation = findViewById(R.id.calender_navigation);
 
         navigation.setSelectedItemId(R.id.calendar_nav);
@@ -81,13 +73,13 @@ public class CalendarActivity extends AppCompatActivity {
         /****
          * Calender Code
          ****/
-
         Date today = Calendar.getInstance().getTime();
         int currentMonth = today.getMonth();
 
         // sets the month label
         TextView monthLabel = findViewById(R.id.monthNameTextView);
         monthLabel.setText(monthNames[currentMonth]);
+
 
         // date calculations to find the number of rows and the starting cell
         int daysInCurrentMonth = daysInMonth(today.getMonth(), today.getYear());
@@ -149,5 +141,7 @@ public class CalendarActivity extends AppCompatActivity {
             }
             calendarCellLayout.addView(calendarRow);
         }
+
+
     }
 }
