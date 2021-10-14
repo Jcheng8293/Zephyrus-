@@ -11,6 +11,16 @@
     <TableLayout
         android:id="@+id/calendarTableLayout"
         android:layout_width="match_parent"
+
+        android:layout_height="380dp"
+        android:measureWithLargestChild="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        app:layout_constraintVertical_bias="0.0"></TableLayout>
+
         android:layout_height="0dp"
         android:measureWithLargestChild="true"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -19,22 +29,40 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2"></TableLayout>
 
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+        android:id="@+id/cardImageView"
+        android:layout_width="120dp"
+        android:layout_height="180dp"
+
         app:layout_constraintGuide_percent="0.5" />
 
     <ImageView
         android:id="@+id/cardImageView"
         android:layout_width="142dp"
         android:layout_height="216dp"
+
         android:contentDescription="This is the ImageView for the currently selected day's tarot card."
         android:src="@drawable/placeholder_back_of_card"
         app:layout_constraintBottom_toTopOf="@+id/monthNameTextView"
         app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintHorizontal_bias="0.498"
+
         app:layout_constraintHorizontal_bias="0.5"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.125"
@@ -55,5 +83,21 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardImageView" />
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/calender_navigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/windowBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calendarTableLayout"
+        app:layout_constraintVertical_bias="1.0"
+        app:menu="@menu/navigation" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

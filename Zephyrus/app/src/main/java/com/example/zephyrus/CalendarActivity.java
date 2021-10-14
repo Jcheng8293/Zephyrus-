@@ -1,5 +1,17 @@
 package com.example.zephyrus;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.widget.TableLayout;
+import android.widget.TableRow;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.util.Calendar;
+import java.util.Date;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Calendar;
@@ -9,7 +21,6 @@ import android.os.Bundle;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
-
 public class CalendarActivity extends AppCompatActivity {
 
     // Do NOT use this to calculate the # of days in a month, use the method daysInMonth()
@@ -38,6 +49,38 @@ public class CalendarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
+
+        /*****
+         * Bottom Navigation Bar Code
+         *****/
+        BottomNavigationView navigation = findViewById(R.id.calender_navigation);
+
+        navigation.setSelectedItemId(R.id.calendar_nav);
+        navigation.setOnNavigationItemSelectedListener(item -> {
+            switch (item.getItemId()) {
+                case R.id.calendar_nav:
+                    break;
+                case R.id.spreads_nav:
+                    Intent a = new Intent(CalendarActivity.this, SpreadsActivity.class);
+                    startActivity(a);
+                    break;
+                case R.id.cardList_nav:
+                    Intent b = new Intent(CalendarActivity.this, CardListActivity.class);
+                    startActivity(b);
+                    break;
+                case R.id.journal_nav:
+                    Intent c = new Intent(CalendarActivity.this, JournalActivity.class);
+                    startActivity(c);
+                    break;
+                default:
+                    break;
+            }
+            return false;
+        });
+
+        /****
+         * Calender Code
+         ****/
 
         Date today = Calendar.getInstance().getTime();
         int currentMonth = today.getMonth();
