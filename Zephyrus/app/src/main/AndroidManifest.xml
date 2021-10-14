@@ -13,8 +13,14 @@
             android:name=".CalendarActivity"
             android:exported="true" />
         <activity
-            android:name=".DailyTarot"
+            android:name=".JournalActivity"
             android:exported="true" />
+        <activity
+            android:name=".CardListActivity"
+            android:exported="true" />
+        <activity
+            android:name=".SpreadsActivity"
+            android:exported="true"/>
         <activity
             android:name=".Splash"
             android:exported="true">

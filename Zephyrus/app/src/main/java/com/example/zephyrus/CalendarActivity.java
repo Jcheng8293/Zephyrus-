@@ -1,14 +1,20 @@
 package com.example.zephyrus;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import java.util.Calendar;
-import java.util.Date;
-
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.util.Calendar;
+import java.util.Date;
 
 public class CalendarActivity extends AppCompatActivity {
 
@@ -34,10 +40,33 @@ public class CalendarActivity extends AppCompatActivity {
         return _daysInMonth[month];
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
+
+        BottomNavigationView navigation = findViewById(R.id.mobile_navigation);
+        navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.spreadsActivity:
+                        Intent a = new Intent(CalendarActivity.this, SpreadsActivity.class);
+                        startActivity(a);
+                        break;
+                    case R.id.cardListActivity:
+                        Intent b = new Intent(CalendarActivity.this, CardListActivity.class);
+                        startActivity(b);
+                        break;
+                    case R.id.journalActivity:
+                        Intent c = new Intent(CalendarActivity.this, JournalActivity.class);
+                        startActivity(c);
+                        break;
+                }
+                return false;
+            }
+        });
 
         Date today = Calendar.getInstance().getTime();
         int currentMonth = today.getMonth();
@@ -106,5 +135,7 @@ public class CalendarActivity extends AppCompatActivity {
             }
             calendarCellLayout.addView(calendarRow);
         }
+
+
     }
 }
