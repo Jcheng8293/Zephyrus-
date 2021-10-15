@@ -4,18 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="Splash">
+    tools:context="Splash"
+    android:background="@drawable/stolen_splash_image">
 
-    <TextView
-        android:id="@+id/splashText"
-        android:layout_width="298dp"
-        android:layout_height="139dp"
-        android:layout_marginBottom="272dp"
-        android:fontFamily="serif"
-        android:text="SPLASH"
-        android:textAlignment="center"
-        android:textSize="60dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
