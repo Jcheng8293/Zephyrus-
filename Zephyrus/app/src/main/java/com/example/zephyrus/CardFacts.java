@@ -1,20 +1,20 @@
 package com.example.zephyrus;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class DailyTarot extends AppCompatActivity {
+public class CardFacts extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.daily_tarot);
+        setContentView(R.layout.card_facts);
         TarotCard card = (TarotCard) getIntent().getSerializableExtra("TarotCard");
 
         TextView leftMeaningTextView = findViewById(R.id.leftMeaningTextView);
@@ -34,25 +34,25 @@ public class DailyTarot extends AppCompatActivity {
         /****
          * Bottom Navigation Bar Code
          ****/
-        BottomNavigationView navigation = findViewById(R.id.spreads_navigation);
+        BottomNavigationView navigation = findViewById(R.id.card_facts_navigation);
 
-        navigation.setSelectedItemId(R.id.spreads_nav);
+        navigation.setSelectedItemId(R.id.cardList_nav);
         navigation.setOnNavigationItemSelectedListener(item -> {
             switch (item.getItemId()) {
                 case R.id.calendar_nav:
-                    Intent a = new Intent(DailyTarot.this, CalendarActivity.class);
+                    Intent a = new Intent(CardFacts.this, CalendarActivity.class);
                     startActivity(a);
                     break;
                 case R.id.spreads_nav:
-                    Intent b = new Intent(DailyTarot.this, SpreadsActivity.class);
+                    Intent b = new Intent(CardFacts.this, SpreadsActivity.class);
                     startActivity(b);
                     break;
                 case R.id.cardList_nav:
-                    Intent c = new Intent(DailyTarot.this, CardListActivity.class);
+                    Intent c = new Intent(CardFacts.this, CardListActivity.class);
                     startActivity(c);
                     break;
                 case R.id.journal_nav:
-                    Intent d = new Intent(DailyTarot.this, JournalActivity.class);
+                    Intent d = new Intent(CardFacts.this, JournalActivity.class);
                     startActivity(d);
                     break;
                 default:

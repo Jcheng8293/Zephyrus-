@@ -19,9 +19,9 @@ public class SpreadsActivity extends AppCompatActivity {
         /****
          * Bottom Navigation Bar Code
          ****/
-        BottomNavigationView navigation = findViewById(R.id.daily_tarot_navigation);
+        BottomNavigationView navigation = findViewById(R.id.spreads_navigation);
 
-        navigation.setSelectedItemId(R.id.daily_tarot_navigation);
+        navigation.setSelectedItemId(R.id.spreads_nav);
         navigation.setOnNavigationItemSelectedListener(item -> {
             switch (item.getItemId()) {
                 case R.id.calendar_nav:

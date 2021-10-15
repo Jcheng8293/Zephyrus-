@@ -7,7 +7,7 @@
     android:background="@color/background">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/daily_tarot_navigation"
+        android:id="@+id/card_facts_navigation"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="?android:attr/windowBackground"
@@ -27,7 +27,7 @@
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/daily_tarot_navigation"
+        app:layout_constraintBottom_toTopOf="@+id/card_facts_navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/centerMeaningTextView" />
