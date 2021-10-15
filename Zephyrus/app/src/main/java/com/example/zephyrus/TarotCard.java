@@ -3,12 +3,14 @@ package com.example.zephyrus;
 import android.graphics.drawable.Drawable;
 
 import java.io.File;
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class TarotCard {
-    private Drawable tarotCardImage;
-    private String[] captions; // the things that go in the bubbles below the card, idk what they're called
-    private String description;
+public class TarotCard implements Serializable
+{
+    private final Drawable tarotCardImage;
+    private final String[] captions; // the things that go in the bubbles below the card, idk what they're called
+    private final String description;
 
     public TarotCard(File imageFile, String[] captions, String description)
     {

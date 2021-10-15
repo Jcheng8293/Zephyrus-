@@ -8,4 +8,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="background">#FFFFFF</color>
+    <color name="DailyTarotMeaningBackgroundColor">#2780F6</color>
 </resources>

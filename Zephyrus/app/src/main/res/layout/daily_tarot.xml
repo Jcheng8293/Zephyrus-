@@ -1,20 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/daily_tarot_navigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/windowBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/navigation" />
 
     <TextView
-        android:id="@+id/mainText"
-        android:layout_width="298dp"
-        android:layout_height="139dp"
-        android:layout_marginBottom="180dp"
+        android:id="@+id/descriptionTextView"
+        android:layout_width="325dp"
+        android:layout_height="250dp"
         android:fontFamily="serif"
-        android:text="MAIN"
+        android:gravity="center_horizontal|center_vertical"
+        android:lineSpacingMultiplier="1.25"
+        android:text="Here is some sample text. If you can read this, then the tarot card did not load correctly. I am trying to pad this with words to be approximately the same length as a normal tarot card description. The quick brown fox jumped over the lazy dog. I could really go for some McNuggets right now."
         android:textAlignment="center"
-        android:textSize="60dp"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/daily_tarot_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/centerMeaningTextView" />
+
+    <ImageView
+        android:id="@+id/tarotCardImageView"
+        android:layout_width="196dp"
+        android:layout_height="267dp"
+        app:layout_constraintBottom_toTopOf="@+id/leftMeaningTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.58"
+        app:srcCompat="@drawable/placeholder_back_of_card" />
+
+    <TextView
+        android:id="@+id/leftMeaningTextView"
+        android:layout_width="110dp"
+        android:layout_height="30dp"
+
+        android:background="@drawable/bg_rounded"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/centerMeaningTextView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/centerMeaningTextView"
+        android:layout_width="110dp"
+        android:layout_height="30dp"
+        android:background="@drawable/bg_rounded"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/rightMeaningTextView"
+        android:layout_width="110dp"
+        android:layout_height="30dp"
+        android:background="@drawable/bg_rounded"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/centerMeaningTextView"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

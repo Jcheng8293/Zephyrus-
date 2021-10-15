@@ -19,7 +19,7 @@ public class JournalActivity extends AppCompatActivity {
         /****
          * Bottom Navigation Bar Code
          ****/
-        BottomNavigationView navigation = findViewById(R.id.journal_navigation);
+        BottomNavigationView navigation = findViewById(R.id.daily_tarot_navigation);
 
         navigation.setSelectedItemId(R.id.journal_nav);
         navigation.setOnNavigationItemSelectedListener(item -> {
