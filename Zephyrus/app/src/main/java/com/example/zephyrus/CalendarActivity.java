@@ -73,8 +73,13 @@ public class CalendarActivity extends AppCompatActivity {
         /****
          * Calender Code
          ****/
+
         Date today = Calendar.getInstance().getTime();
         int currentMonth = today.getMonth();
+        int currentYear = today.getYear();
+        MonthlyTarotHistory thisMonthsTarotHistory =
+                MonthlyTarotHistory.TarotHistoryForMonthAndYear(
+                        getApplicationContext(), currentMonth, currentYear);
 
         // sets the month label
         TextView monthLabel = findViewById(R.id.monthNameTextView);
@@ -100,12 +105,20 @@ public class CalendarActivity extends AppCompatActivity {
             for(int col = 0; col < DAYS_IN_WEEK; col++)
             {
                 int cellNumber = row * 7 + col;
-                int currentDayOfMonth = cellNumber + 1 - firstWeekdayOfMonth;
+                int calendarSquaresDayOfMonth = cellNumber + 1 - firstWeekdayOfMonth;
                 CalendarSquare calendarSquare;
-                if (currentDayOfMonth <= 0 || currentDayOfMonth > daysInCurrentMonth)
-                    calendarSquare = new CalendarSquare(this, null);
-                else
-                    calendarSquare = new CalendarSquare(this, currentDayOfMonth);
+                // if it's a square in the calendar that isn't associated with an actual day
+                if (calendarSquaresDayOfMonth <= 0 || calendarSquaresDayOfMonth > daysInCurrentMonth) {
+                    calendarSquare = new CalendarSquare(this, null, null);
+                }
+                else {
+                    if(thisMonthsTarotHistory.userFlippedCardOnDay(calendarSquaresDayOfMonth))
+                    calendarSquare = new CalendarSquare(this, calendarSquaresDayOfMonth,
+                            thisMonthsTarotHistory.getTarotCardForDay(calendarSquaresDayOfMonth).getImage());
+                    else
+                        calendarSquare = new CalendarSquare(this, calendarSquaresDayOfMonth,
+                                null); // TODO: replace this 'null' with an image of the back of a card once we have the card images made
+                }
 
                 TableRow.LayoutParams calendarSquareLayoutParams = new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.MATCH_PARENT);
                 // these two lines make every cell have the same width

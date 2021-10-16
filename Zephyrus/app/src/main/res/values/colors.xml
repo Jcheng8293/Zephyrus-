@@ -9,4 +9,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="background">#FFFFFF</color>
     <color name="DailyTarotMeaningBackgroundColor">#2780F6</color>
+    <color name="CalendarMonthNameForegroundColor">#E4AE8C</color>
+    <color name="CalendarBackgroundColor">#000000</color>
+    <color name="CalendarUnusedSquare">#b3886d</color>
+    <color name="CalendarUsedSquare">#E4AE8C</color>
 </resources>

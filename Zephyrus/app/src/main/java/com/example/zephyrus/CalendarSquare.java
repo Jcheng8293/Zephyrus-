@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.Toast;
 
@@ -13,15 +14,17 @@ public class CalendarSquare extends AppCompatButton implements View.OnClickListe
 {
     private final Integer dayOfMonth;
     private static final Paint dayOfMonthTextPaint = makeDayOfMonthTextPaint();
-    public CalendarSquare(Context context, Integer dayOfMonth)
+    private final Drawable tarotCardImage;
+    public CalendarSquare(Context context, Integer dayOfMonth, Drawable tarotCardImage)
     {
         super(context);
         this.dayOfMonth = dayOfMonth;
         setOnClickListener(this);
         if(dayOfMonth == null)
-            this.setBackgroundColor(Color.rgb(255, 0, 0));
+            this.setBackgroundColor(getResources().getColor(R.color.CalendarUnusedSquare));
         else
-            this.setBackgroundColor(Color.rgb(0, 255, 0));
+            this.setBackgroundColor(getResources().getColor(R.color.CalendarUsedSquare));
+        this.tarotCardImage = tarotCardImage;
     }
     public void onMeasure(int widthMeasureSpec, int heightMeasureSpec)
     {
@@ -55,6 +58,8 @@ public class CalendarSquare extends AppCompatButton implements View.OnClickListe
             float textHeight = getHeight() / 5.0f;
             dayOfMonthTextPaint.setTextSize(textHeight);
             canvas.drawText("" + this.dayOfMonth, 5, textHeight + 1, dayOfMonthTextPaint);
+            if(this.tarotCardImage != null)
+                this.tarotCardImage.draw(canvas);
         }
     }
 }
