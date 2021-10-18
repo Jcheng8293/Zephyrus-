@@ -52,7 +52,7 @@ public class TarotCard implements Serializable
     public void setState(int state) { this.state = state; }
 
 
-    public ArrayList<TarotCard> shuffle(ArrayList<TarotCard> deck, ArrayList<TarotCard> regularDeck, ArrayList<TarotCard> reverseDeck) {
+    public ArrayList<TarotCard> shuffle(ArrayList<TarotCard> deck) {
         ArrayList<TarotCard> temp = new ArrayList<>();
 
         for (int i = 38; i <= deck.size(); i++) {
