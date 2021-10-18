@@ -15,6 +15,8 @@ public class TarotCard implements Serializable
 
     public TarotCard(File imageFile, String[] captions, String description, int state)
     {
+        if (state < 0 || state > 1) {
+            throw new IllegalArgumentException("state should always be 0 or 1"); }
         if(description == null)
             throw new IllegalArgumentException("description cannot be null");
         if(captions == null)
@@ -26,26 +28,17 @@ public class TarotCard implements Serializable
         if(!imageFile.exists())
             throw new IllegalArgumentException("imageFile '" + imageFile.getAbsolutePath() + "' does not exist");
 
-        this.state = 0;
+        this.state = state;
         this.captions = captions;
         this.description = description;
         this.tarotCardImage = Drawable.createFromPath(imageFile.getAbsolutePath());
     }
 
-    public Drawable getImage()
-    {
-        return this.tarotCardImage;
-    }
+    public Drawable getImage() { return this.tarotCardImage; }
 
-    public String[] getCaptions()
-    {
-        return this.captions;
-    }
+    public String[] getCaptions() { return this.captions; }
 
-    public String getDescription()
-    {
-        return this.description;
-    }
+    public String getDescription() { return this.description; }
 
     public int getState() { return this.state; }
 
@@ -55,21 +48,19 @@ public class TarotCard implements Serializable
     public ArrayList<TarotCard> shuffle(ArrayList<TarotCard> deck) {
         ArrayList<TarotCard> temp = new ArrayList<>();
 
-        for (int i = 38; i <= deck.size(); i++) {
+        for (int i = 39; i < deck.size(); ) {
             temp.add(deck.remove(i)); }
 
         int random = (int) Math.round(Math.random());
-
         if (random == 0) { reverse(deck); }
         else { reverse(temp); }
 
         ArrayList<TarotCard> newDeck = new ArrayList<>();
 
-        for (int i = 0; deck.size() != 0 && temp.size() != 0; i++) {
-            newDeck.add(deck.remove(i));
-            newDeck.add(temp.remove(i));
+        while (deck.size() != 0 && temp.size() != 0) {
+            newDeck.add(deck.remove(0));
+            newDeck.add(temp.remove(0));
         }
-
         return newDeck;
     }
 
