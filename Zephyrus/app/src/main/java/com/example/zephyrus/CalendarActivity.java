@@ -30,7 +30,7 @@ public class CalendarActivity extends AppCompatActivity {
     final int marginBetweenAdjacentCalenderCells = 10;
     final int halfMarginBetweenAdjacentCalenderCells = marginBetweenAdjacentCalenderCells / 2;
 
-    public int daysInMonth(int month, int year)
+    public static int daysInMonth(int month, int year)
     {
         if(month == 1) // if February, add 1 if it's a leap year
             return _daysInMonth[month] + (year % 4 == 0 ? 1 : 0);
