@@ -17,9 +17,9 @@ public class CardFacts extends AppCompatActivity {
         setContentView(R.layout.card_facts);
         TarotCard card = (TarotCard) getIntent().getSerializableExtra("TarotCard");
 
-        TextView leftMeaningTextView = findViewById(R.id.leftMeaningTextView);
+        TextView leftMeaningTextView = findViewById(R.id.topMeaningTextView);
         TextView centerMeaningTextView = findViewById(R.id.centerMeaningTextView);
-        TextView rightMeaningTextView = findViewById(R.id.rightMeaningTextView);
+        TextView rightMeaningTextView = findViewById(R.id.bottomMeaningTextView);
         TextView descriptionTextView = findViewById(R.id.descriptionTextView);
         ImageView tarotCardImageView = findViewById(R.id.tarotCardImageView);
 
