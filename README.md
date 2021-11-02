@@ -9,6 +9,7 @@ Added 78 buttons for "Card List" activity (was a bitch, couldn't figure out how 
  - Need to figure out how to correspond the card with the "card_fact_activity.xml" thing
  - The Fool card should give info about that, The Magician, etc...
  - Good luck with this one 👍
+
 Editted "Card_Facts" to accomodate long captions + description
 Added "Assets" File for the text stuff (Haven't been able to actually utilize it effectively yet)
  - tarot_description.txt and tarot_deck.txt are empty.
