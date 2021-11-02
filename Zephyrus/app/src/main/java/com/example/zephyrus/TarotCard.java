@@ -1,27 +1,31 @@
 package com.example.zephyrus;
 
+import android.app.Activity;
 import android.graphics.drawable.Drawable;
 
 import java.io.File;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class TarotCard implements Serializable
+public class TarotCard extends Activity implements Serializable
 {
     public static enum State {NORMAL, REVERSED};
 
+    private String name;
     private final Drawable tarotCardImage;
     private final String[] captions; // the things that go in the bubbles below the card, idk what they're called
     private final String description;
     private State state;
 
-    public TarotCard(File imageFile, String[] captions, String description, State state)
+    public TarotCard(File imageFile, String name, String[] captions, String description, State state)
     {
-        this(getDrawableFromFile(imageFile), captions, description, state);
+        this(getDrawableFromFile(imageFile), name, captions, description, state);
     }
 
-    public TarotCard(Drawable image, String[] captions, String description, State state)
+    public TarotCard(Drawable image, String name, String[] captions, String description, State state)
     {
+        if(name == null)
+            throw new IllegalArgumentException("name cannot be null");
         if(description == null)
             throw new IllegalArgumentException("description cannot be null");
         if(captions == null)
@@ -29,7 +33,7 @@ public class TarotCard implements Serializable
         if(captions.length != 3)
             throw new IllegalArgumentException("The number of captions must be equal to 3, not " + captions.length);
 
-
+        this.name = name;
         this.state = state;
         this.captions = captions;
         this.description = description;

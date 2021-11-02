@@ -25,6 +25,9 @@
             android:name=".CardFacts"
             android:exported="true"/>
         <activity
+            android:name=".ThreeCardSpread"
+            android:exported="true" />
+        <activity
             android:name=".Splash"
             android:exported="true">
             <intent-filter>

@@ -3,6 +3,8 @@ package com.example.zephyrus;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -43,5 +45,31 @@ public class SpreadsActivity extends AppCompatActivity {
             }
             return false;
         });
+
+        /*****
+         * Three Card Spreads
+         ****/
+        Button button1 = findViewById(R.id.past_present_future_button);
+        Button button2 = findViewById(R.id.filler_button);
+
+        // Past Present Future
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(SpreadsActivity.this, ThreeCardSpread.class));
+            }
+        }
+        );
+
+        // Unknown
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(SpreadsActivity.this, ThreeCardSpread.class));
+            }
+        }
+        );
+
     }
+
 }

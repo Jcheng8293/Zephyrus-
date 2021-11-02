@@ -3,6 +3,10 @@ package com.example.zephyrus;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.GridLayout;
+import android.widget.RelativeLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -44,5 +48,10 @@ public class CardListActivity extends AppCompatActivity {
             return false;
         });
 
+        GridLayout gridLayout = findViewById(R.id.gridLayout);
+        Button button = new Button(this);
+        button.setLayoutParams(new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT ));
+        gridLayout.addView(button, 120, 180);
     }
 }
