@@ -21,3 +21,15 @@ Added "Assets" File for the text stuff (Haven't been able to actually utilize it
  - Have not actually figured out how to actually save the deck... more complicated than anticipated
 
 (I think thats everything)
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+November 2nd 4pm
+
+Added names for each card in the "CardList"
+
+ - Cards with 3 lines tend to be "elevated," needs fixing
+
+Changed caption limit in "TarotCard" to 6 for reversed ones
+
+*Can't figure out the whole "saving file (.txt), though i can get it to read it
+ couldn't use a hand on figuring out how to write/create files to storage*

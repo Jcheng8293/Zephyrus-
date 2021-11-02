@@ -24,17 +24,21 @@
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center">
 
             <GridLayout
                 android:id="@+id/gridLayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:clipToPadding="false"
+                android:layout_weight="1"
+                android:clipToPadding="true"
                 android:columnCount="3"
                 android:layoutDirection="inherit"
                 android:layoutMode="clipBounds"
+                android:minWidth="120dp"
+                android:minHeight="180dp"
                 android:paddingStart="8dp"
                 android:rowCount="26"
                 android:rowOrderPreserved="true"
@@ -477,7 +481,7 @@
                     android:layout_width="120dp"
                     android:layout_height="180dp"
                     android:layout_row="16"
-                    android:layout_column="2"
+                    android:layout_column="0"
                     android:layout_marginLeft="8dp"
                     android:text="Text"></Button>
 
@@ -486,7 +490,7 @@
                     android:layout_width="120dp"
                     android:layout_height="180dp"
                     android:layout_row="16"
-                    android:layout_column="0"
+                    android:layout_column="1"
                     android:layout_marginLeft="8dp"
                     android:text="Text"></Button>
 
@@ -495,7 +499,7 @@
                     android:layout_width="120dp"
                     android:layout_height="180dp"
                     android:layout_row="16"
-                    android:layout_column="1"
+                    android:layout_column="2"
                     android:layout_marginLeft="8dp"
                     android:text="Text"></Button>
 

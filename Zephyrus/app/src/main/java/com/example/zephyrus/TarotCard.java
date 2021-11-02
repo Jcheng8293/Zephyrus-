@@ -30,8 +30,8 @@ public class TarotCard extends Activity implements Serializable
             throw new IllegalArgumentException("description cannot be null");
         if(captions == null)
             throw new IllegalArgumentException("captions cannot be null");
-        if(captions.length != 3)
-            throw new IllegalArgumentException("The number of captions must be equal to 3, not " + captions.length);
+        if(captions.length != 6)
+            throw new IllegalArgumentException("The number of captions must be equal to 6, not " + captions.length);
 
         this.name = name;
         this.state = state;
