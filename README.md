@@ -32,4 +32,5 @@ Added names for each card in the "CardList"
 Changed caption limit in "TarotCard" to 6 for reversed ones
 
 *Can't figure out the whole "saving file (.txt), though i can get it to read it
- couldn't use a hand on figuring out how to write/create files to storage*
+
+ could use a hand on figuring out how to write/create files to storage*
