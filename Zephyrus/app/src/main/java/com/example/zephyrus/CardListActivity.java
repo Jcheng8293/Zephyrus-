@@ -1,16 +1,20 @@
 package com.example.zephyrus;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
 public class CardListActivity extends AppCompatActivity {
 
-    @SuppressLint("NonConstantResourceId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,5 +48,31 @@ public class CardListActivity extends AppCompatActivity {
             return false;
         });
 
+        /***
+         * Dynamically name buttons
+         ***/
+
+
+        try {
+            InputStream file = getAssets().open("tarot_cards_spaced.txt");
+            BufferedReader reader = new BufferedReader(new InputStreamReader(file));
+            for (int i = R.id.B00; i <= R.id.B77; i++) {
+                Button button = findViewById(i);
+
+                // Unknown reason... leave it alone
+                if (i == R.id.B73) {
+                    reader.readLine();
+                }
+                String line = reader.readLine();
+                button.setText(line);
+                for (int j = 0; j < 7; j++) {
+                    reader.readLine();
+                }
+
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
