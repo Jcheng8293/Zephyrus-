@@ -13,10 +13,10 @@ def main():
         text_width, text_height = draw.textsize(text, font=font)
         draw.text(((WIDTH_IMG - text_width)//2, (HEIGHT_IMG - text_height) // 2), text,
                   font=font, align="center", fill=FOREGROUND_RGB)
-        img.save(f'../Zephyrus/app/src/main/res/drawable/SampleTarotCards/card{i}.png')
+        img.save(f'../Zephyrus/app/src/main/assets/SampleTarotCards/card{i}.png')
 
 
-NUM_CARDS = 72
+NUM_CARDS = 78
 BACKGROUND_RGB = (230, 230, 230)
 FOREGROUND_RGB = (0, 0, 0)
 WIDTH_IMG, HEIGHT_IMG = 219, 304
