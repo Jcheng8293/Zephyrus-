@@ -17,16 +17,16 @@ public class CardFacts extends AppCompatActivity {
         setContentView(R.layout.card_facts);
         TarotCard card = (TarotCard) getIntent().getSerializableExtra("TarotCard");
 
-        TextView leftMeaningTextView = findViewById(R.id.leftMeaningTextView);
+        TextView topMeaningTextView = findViewById(R.id.topMeaningTextView);
         TextView centerMeaningTextView = findViewById(R.id.centerMeaningTextView);
-        TextView rightMeaningTextView = findViewById(R.id.rightMeaningTextView);
+        TextView bottomMeaningTextView = findViewById(R.id.bottomMeaningTextView);
         TextView descriptionTextView = findViewById(R.id.descriptionTextView);
         ImageView tarotCardImageView = findViewById(R.id.tarotCardImageView);
 
         String[] captions = card.getCaptions();
-        leftMeaningTextView.setText(captions[0]);
+        topMeaningTextView.setText(captions[0]);
         centerMeaningTextView.setText(captions[1]);
-        rightMeaningTextView.setText(captions[2]);
+        bottomMeaningTextView.setText(captions[2]);
         descriptionTextView.setText(card.getDescription());
         tarotCardImageView.setImageDrawable(card.getImage());
 
