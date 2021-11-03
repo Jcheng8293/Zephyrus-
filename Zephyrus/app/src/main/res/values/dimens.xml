@@ -3,4 +3,6 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="DailyTarotMeaningCornerRadius">10dp</dimen>
+    <dimen name="CaptionTextLeftRightPadding">10dp</dimen>
+    <dimen name="CaptionTextTopBottomPadding">2.5dp</dimen>
 </resources>
