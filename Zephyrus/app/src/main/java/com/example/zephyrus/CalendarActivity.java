@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -29,7 +30,6 @@ public class CalendarActivity extends AppCompatActivity {
     final int verticalBorderCalendarMargin = 20;
     final int marginBetweenAdjacentCalenderCells = 10;
     final int halfMarginBetweenAdjacentCalenderCells = marginBetweenAdjacentCalenderCells / 2;
-
     public static int daysInMonth(int month, int year)
     {
         if(month == 1) // if February, add 1 if it's a leap year
@@ -154,7 +154,10 @@ public class CalendarActivity extends AppCompatActivity {
             }
             calendarCellLayout.addView(calendarRow);
         }
+    }
 
-
+    public void calendarSquareClickedCallback(CalendarSquare calendarSquare)
+    {
+        Toast.makeText(this, "dayOfMonth = " + calendarSquare.getDayOfMonth(), Toast.LENGTH_SHORT).show();
     }
 }

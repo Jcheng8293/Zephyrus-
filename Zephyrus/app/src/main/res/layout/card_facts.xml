@@ -16,94 +16,77 @@
         app:layout_constraintRight_toRightOf="parent"
         app:menu="@menu/navigation" />
 
+    <TextView
+        android:id="@+id/descriptionTextView"
+        android:layout_width="325dp"
+        android:layout_height="250dp"
+        android:fontFamily="serif"
+        android:gravity="center_horizontal|center_vertical"
+        android:lineSpacingMultiplier="1.25"
+        android:text="Here is some sample text. If you can read this, then the tarot card did not load correctly. I am trying to pad this with words to be approximately the same length as a normal tarot card description. The quick brown fox jumped over the lazy dog. I could really go for some McNuggets right now."
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/card_facts_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/centerMeaningTextView" />
+
     <ImageView
         android:id="@+id/tarotCardImageView"
         android:layout_width="196dp"
         android:layout_height="267dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/topMeaningTextView"
+        app:layout_constraintBottom_toTopOf="@+id/leftMeaningTextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.19"
+        app:layout_constraintVertical_bias="0.58"
         app:srcCompat="@drawable/placeholder_back_of_card" />
 
     <TextView
-        android:id="@+id/topMeaningTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/leftMeaningTextView"
+        android:layout_width="110dp"
+        android:layout_height="30dp"
 
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
         android:background="@drawable/bg_rounded"
         android:gravity="center_horizontal|center_vertical"
         android:text="TextView"
         android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/centerMeaningTextView"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/centerMeaningTextView"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tarotCardImageView" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/centerMeaningTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_width="110dp"
+        android:layout_height="30dp"
         android:background="@drawable/bg_rounded"
         android:gravity="center_horizontal|center_vertical"
         android:text="TextView"
         android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomMeaningTextView"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/topMeaningTextView" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/bottomMeaningTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:id="@+id/rightMeaningTextView"
+        android:layout_width="110dp"
+        android:layout_height="30dp"
         android:background="@drawable/bg_rounded"
         android:gravity="center_horizontal|center_vertical"
-        android:text="Carrying on with something that is not good for us (and that we should end)"
+        android:text="TextView"
         android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/centerMeaningTextView" />
-
-    <ScrollView
-        android:id="@+id/scrollView"
-        android:layout_width="407dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/card_facts_navigation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bottomMeaningTextView">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/descriptionTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="serif"
-                android:gravity="center_horizontal|center_vertical"
-                android:lineSpacingMultiplier="1.25"
-                android:text="Here is some sample text. If you can read this, then the tarot card did not load correctly. I am trying to pad this with words to be approximately the same length as a normal tarot card description. The quick brown fox jumped over the lazy dog. I could really go for some McNuggets right now. Here is some sample text. If you can read this, then the tarot card did not load correctly. I am trying to pad this with words to be approximately the same length as a normal tarot card description. The quick brown fox jumped over the lazy dog. I could really go for some McNuggets right now."
-                android:textAlignment="center"
-                android:textColor="#000000"
-                android:textSize="18sp" />
-        </LinearLayout>
-    </ScrollView>
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/centerMeaningTextView"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

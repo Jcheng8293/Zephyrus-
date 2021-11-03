@@ -35,6 +35,10 @@ public class CalendarSquare extends AppCompatButton implements View.OnClickListe
         setMeasuredDimension(size, size); // make it square
     }
 
+    public Integer getDayOfMonth() {
+        return dayOfMonth;
+    }
+
     public static Paint makeDayOfMonthTextPaint()
     {
         Paint paint = new Paint();
@@ -46,7 +50,8 @@ public class CalendarSquare extends AppCompatButton implements View.OnClickListe
     @Override
     public void onClick(View view)
     {
-        Toast.makeText(getContext(), "dayOfMonth = " + dayOfMonth, Toast.LENGTH_SHORT).show();
+        // just pass it and a ref to self along to parent activity
+        ((CalendarActivity) getContext()).calendarSquareClickedCallback(this);
     }
 
     @Override

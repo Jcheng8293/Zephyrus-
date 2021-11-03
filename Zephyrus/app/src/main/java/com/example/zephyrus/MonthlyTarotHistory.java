@@ -11,6 +11,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.HashMap;
+import java.util.Random;
 
 /*
 * This class is used for storing and accessing the history of which tarot cards a user has flipped
@@ -33,6 +34,25 @@ public class MonthlyTarotHistory implements Serializable {
         this.daysThatTheUserSelectedCardThisMonth = new HashMap<>();
         saveHistoryToFile(applicationContext);
     }
+    public boolean containsCardWithID(int cardID)
+    {
+        for(Integer day : daysThatTheUserSelectedCardThisMonth.keySet())
+        {
+            if(daysThatTheUserSelectedCardThisMonth.get(day).getCardID() == cardID)
+                return true;
+        }
+        return false;
+    }
+    public int randomCardIDOfUnseenCard()
+    {
+        Random r = new Random();
+        int randCardID;
+        do {
+            randCardID = r.nextInt(72);
+        } while(this.containsCardWithID(randCardID));
+        return randCardID;
+    }
+
     /*
     * This function returns a Tarot Card history object. If this is the first time that a user has
     * accessed the app for this month, it creates a new TarotCardHistory object. If they have already
