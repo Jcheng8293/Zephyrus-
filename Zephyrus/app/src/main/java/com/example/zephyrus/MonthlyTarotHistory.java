@@ -23,7 +23,7 @@ import java.util.Random;
 public class MonthlyTarotHistory implements Serializable {
     private final int month; // [0,11]
     private final int year;  // A.D.
-    private final HashMap<Integer, TarotCard> daysThatTheUserSelectedCardThisMonth; // dayNumber -> tarotCardForThatDay
+    private final HashMap<Integer, Integer> daysThatTheUserSelectedCardThisMonth; // dayNumber -> tarotCardID
     private MonthlyTarotHistory(Context applicationContext, int month, int year)
     {
         if(month < 0 || month > 11)
@@ -38,7 +38,7 @@ public class MonthlyTarotHistory implements Serializable {
     {
         for(Integer day : daysThatTheUserSelectedCardThisMonth.keySet())
         {
-            if(daysThatTheUserSelectedCardThisMonth.get(day).getCardID() == cardID)
+            if(daysThatTheUserSelectedCardThisMonth.get(day) == cardID)
                 return true;
         }
         return false;
@@ -61,9 +61,13 @@ public class MonthlyTarotHistory implements Serializable {
     * */
     public static MonthlyTarotHistory TarotHistoryForMonthAndYear(Context applicationContext, int month, int year)
     {
-        if(historyFileForMonthAndYearAlreadyExists(month, year))
+        if(historyFileForMonthAndYearAlreadyExists(applicationContext, month, year))
             return readTarotHistoryFromFile(applicationContext, month, year);
         return new MonthlyTarotHistory(applicationContext, month, year);
+    }
+    public int numCardsFlippedInMonth()
+    {
+        return daysThatTheUserSelectedCardThisMonth.size();
     }
     public int getMonth()
     {
@@ -73,16 +77,16 @@ public class MonthlyTarotHistory implements Serializable {
     {
         return year;
     }
-    public void addTarotCardForDay(Context applicationContext, TarotCard card, int day)
+    public void addTarotCardForDay(Context applicationContext, int cardID, int day)
     {
-        daysThatTheUserSelectedCardThisMonth.put(day, card);
+        daysThatTheUserSelectedCardThisMonth.put(day, cardID);
         saveHistoryToFile(applicationContext);
     }
     public boolean userFlippedCardOnDay(int day)
     {
         return daysThatTheUserSelectedCardThisMonth.containsKey(day);
     }
-    public TarotCard getTarotCardForDay(int day)
+    public Integer getTarotCardIDForDay(int day)
     {
         return daysThatTheUserSelectedCardThisMonth.get(day);
     }
@@ -110,15 +114,17 @@ public class MonthlyTarotHistory implements Serializable {
         String monthPaddedWithZeros = String.format("%2s", ""+month).replace(' ', '0');
         return "MonthlyHistory-" + monthPaddedWithZeros + "-" + year + ".ser";
     }
-    private static boolean historyFileForMonthAndYearAlreadyExists(int month, int year)
+    private static boolean historyFileForMonthAndYearAlreadyExists(Context applicationContext, int month, int year)
     {
+        File applicationFilesDir = applicationContext.getFilesDir();
         String filename = makeFilenameFromMonthAndYear(month, year);
-        return new File(filename).exists();
+        return new File(applicationFilesDir, filename).exists();
     }
     private static MonthlyTarotHistory readTarotHistoryFromFile(Context applicationContext, int month, int year)
     {
+        File applicationFilesDir = applicationContext.getFilesDir();
         String filename = makeFilenameFromMonthAndYear(month, year);
-        File historyFile = new File(filename);
+        File historyFile = new File(applicationFilesDir, filename);
         MonthlyTarotHistory h = null;
         try {
             FileInputStream f_in = new FileInputStream(historyFile);

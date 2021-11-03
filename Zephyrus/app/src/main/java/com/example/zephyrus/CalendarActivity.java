@@ -1,7 +1,10 @@
 package com.example.zephyrus;
 
+import android.app.ActivityOptions;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.SeekBar;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -30,6 +33,7 @@ public class CalendarActivity extends AppCompatActivity {
     final int verticalBorderCalendarMargin = 20;
     final int marginBetweenAdjacentCalenderCells = 10;
     final int halfMarginBetweenAdjacentCalenderCells = marginBetweenAdjacentCalenderCells / 2;
+    MonthlyTarotHistory thisMonthsTarotHistory;
     public static int daysInMonth(int month, int year)
     {
         if(month == 1) // if February, add 1 if it's a leap year
@@ -77,9 +81,10 @@ public class CalendarActivity extends AppCompatActivity {
         Date today = Calendar.getInstance().getTime();
         int currentMonth = today.getMonth();
         int currentYear = today.getYear();
-        MonthlyTarotHistory thisMonthsTarotHistory =
-                MonthlyTarotHistory.TarotHistoryForMonthAndYear(
-                        getApplicationContext(), currentMonth, currentYear);
+        thisMonthsTarotHistory = MonthlyTarotHistory.TarotHistoryForMonthAndYear(
+                getApplicationContext(), currentMonth, currentYear);
+
+        // Toast.makeText(this, "hist count = " + thisMonthsTarotHistory.numCardsFlippedInMonth(), Toast.LENGTH_LONG).show();
 
         // sets the month label
         TextView monthLabel = findViewById(R.id.monthNameTextView);
@@ -113,11 +118,20 @@ public class CalendarActivity extends AppCompatActivity {
                 }
                 else {
                     if(thisMonthsTarotHistory.userFlippedCardOnDay(calendarSquaresDayOfMonth))
-                    calendarSquare = new CalendarSquare(this, calendarSquaresDayOfMonth,
-                            thisMonthsTarotHistory.getTarotCardForDay(calendarSquaresDayOfMonth).getImage());
-                    else
+                    {
+                        TarotCard daysCard = null;
+                        try {
+                            daysCard = TarotCard.readNewTarotCardByID(getApplicationContext(),
+                                    thisMonthsTarotHistory.getTarotCardIDForDay(calendarSquaresDayOfMonth));
+                        }
+                        catch(Exception e) {}
+                        calendarSquare = new CalendarSquare(this, calendarSquaresDayOfMonth,
+                                daysCard.getImage());
+                    }
+                    else {
                         calendarSquare = new CalendarSquare(this, calendarSquaresDayOfMonth,
                                 null); // TODO: replace this 'null' with an image of the back of a card once we have the card images made
+                    }
                 }
 
                 TableRow.LayoutParams calendarSquareLayoutParams = new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.MATCH_PARENT);
@@ -158,6 +172,18 @@ public class CalendarActivity extends AppCompatActivity {
 
     public void calendarSquareClickedCallback(CalendarSquare calendarSquare)
     {
-        Toast.makeText(this, "dayOfMonth = " + calendarSquare.getDayOfMonth(), Toast.LENGTH_SHORT).show();
+        Integer selectedDay = calendarSquare.getDayOfMonth();
+        if(selectedDay == null)
+            return;
+        // Toast.makeText(this, "dayOfMonth = " + calendarSquare.getDayOfMonth(), Toast.LENGTH_SHORT).show();
+        if(!thisMonthsTarotHistory.userFlippedCardOnDay(selectedDay))
+        {
+            int randomUnseenCardID = thisMonthsTarotHistory.randomCardIDOfUnseenCard();
+            thisMonthsTarotHistory.addTarotCardForDay(getApplicationContext(), randomUnseenCardID, selectedDay);
+        }
+        int cardID = thisMonthsTarotHistory.getTarotCardIDForDay(selectedDay);
+        Intent cardFactsIntent = new Intent(this, CardFacts.class);
+        cardFactsIntent.putExtra("TarotCardID", cardID);
+        startActivity(cardFactsIntent);
     }
 }

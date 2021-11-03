@@ -15,7 +15,12 @@ public class CardFacts extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.card_facts);
-        TarotCard card = (TarotCard) getIntent().getSerializableExtra("TarotCard");
+        int tarotCardID = (int) getIntent().getSerializableExtra("TarotCardID");
+        TarotCard card = null;
+        try {
+            card = TarotCard.readNewTarotCardByID(getApplicationContext(), tarotCardID);
+        }
+        catch (Exception e){}
 
         TextView leftMeaningTextView = findViewById(R.id.leftMeaningTextView);
         TextView centerMeaningTextView = findViewById(R.id.centerMeaningTextView);

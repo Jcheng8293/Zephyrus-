@@ -18,12 +18,13 @@ public class TarotCard implements Serializable
     private final String[] captions; // the things that go in the bubbles below the card, idk what they're called
     private final String description;
     private State state;
+    private static final int NUM_TAROT_CARDS = 78;
 
     // 'context' should be the result of the call getApplicationContext()
     public static TarotCard readNewTarotCardByID(Context context, int cardID) throws Exception
     {
-        if(cardID < 0 || cardID >= 72)
-            throw new IllegalArgumentException("cardID must be [0, 72), but was given " + cardID);
+        if(cardID < 0 || cardID >= NUM_TAROT_CARDS)
+            throw new IllegalArgumentException("cardID must be [0, " + NUM_TAROT_CARDS +"), but was given " + cardID);
 
         InputStream in_stream = context.getAssets().open("tarot_cards_info.txt");
 
@@ -47,7 +48,7 @@ public class TarotCard implements Serializable
             captions[k] = textScanner.nextLine();
 
         String imageFilename = "SampleTarotCards/card" + (cardID + 1) + ".png";
-        Toast.makeText(context, "Card #" + cardID + " = " + cardName, Toast.LENGTH_LONG).show();
+        // Toast.makeText(context, "Card #" + cardID + " = " + cardName, Toast.LENGTH_LONG).show();
         return new TarotCard(cardID, context, imageFilename, cardName, captions, "There are no descriptions for now.", cardState);
     }
 
