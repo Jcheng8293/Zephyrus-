@@ -60,11 +60,22 @@ public class CalendarSquare extends AppCompatButton implements View.OnClickListe
         super.onDraw(canvas);
         if(this.dayOfMonth != null)
         {
-            float textHeight = getHeight() / 5.0f;
+            int height, width;
+            height = width = getHeight();
+            int centerY = height / 2;
+            int centerX = width / 2;
+            if(this.tarotCardImage != null) {
+                double cardImageAspectRatio = (double) tarotCardImage.getIntrinsicWidth() / tarotCardImage.getIntrinsicHeight();
+                double cardImageWidth = width / 2;
+                double cardImageHeight = cardImageWidth / cardImageAspectRatio;
+                tarotCardImage.setBounds((int)(centerX - cardImageWidth/2), (int)(centerY - cardImageHeight/2),
+                                         (int)(centerX + cardImageWidth/2), (int)(centerY + cardImageHeight/2));
+                tarotCardImage.draw(canvas);
+            }
+
+            float textHeight = height / 5.0f;
             dayOfMonthTextPaint.setTextSize(textHeight);
             canvas.drawText("" + this.dayOfMonth, 5, textHeight + 1, dayOfMonthTextPaint);
-            if(this.tarotCardImage != null)
-                this.tarotCardImage.draw(canvas);
         }
     }
 }
