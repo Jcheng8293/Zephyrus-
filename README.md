@@ -1,6 +1,15 @@
 # Zephyrus-
 Android App Project
 
+November 5
+Added a folder for card images
+
+- Included a drawing for a possible design option to be used on the back of the tarot cards
+
+- Three more variations are planned to be created for the backs of the cards
+
+*All of the back designs are not set in stone and can be altered to better suit the overall design scheme of the app
+
 November 4
 Added a "Reverse" Button in CardListActivity that:
 
