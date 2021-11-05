@@ -1,7 +1,6 @@
 package com.example.zephyrus;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -44,7 +43,6 @@ public class ThreeCardSpread extends AppCompatActivity {
                  }
 
                  reader.readLine();
-                 deck.add(new TarotCard((Drawable) null, name, captions, "Empty", TarotCard.State.NORMAL));
                  writer.write(name.getBytes());
                  writer.write("Normal\n".getBytes());
 
