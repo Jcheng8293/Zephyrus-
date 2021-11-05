@@ -3,6 +3,7 @@ package com.example.zephyrus;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -79,5 +80,13 @@ public class CardListActivity extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void cardButtonIsClicked(View v)
+    {
+        int cardID = v.getId() - R.id.B00; // assumes all the IDs are sequential
+        Intent cardFactsIntent = new Intent(this, CardFacts.class);
+        cardFactsIntent.putExtra("TarotCardID", cardID);
+        startActivity(cardFactsIntent);
     }
 }

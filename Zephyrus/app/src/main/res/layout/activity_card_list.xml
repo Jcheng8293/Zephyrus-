@@ -56,9 +56,14 @@
                     android:layout_row="0"
                     android:layout_column="0"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:lineSpacingExtra="0dp"
                     android:text="Text"
                     android:textSize="14sp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B01"
@@ -67,9 +72,14 @@
                     android:layout_row="0"
                     android:layout_column="1"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:lineSpacingExtra="0dp"
                     android:text="Text"
                     android:textSize="14sp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B02"
@@ -78,9 +88,14 @@
                     android:layout_row="0"
                     android:layout_column="2"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:lineSpacingExtra="0dp"
                     android:text="Text"
                     android:textSize="14sp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B03"
@@ -89,10 +104,15 @@
                     android:layout_row="1"
                     android:layout_column="0"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:lineSpacingExtra="0dp"
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="8dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B04"
@@ -101,10 +121,15 @@
                     android:layout_row="1"
                     android:layout_column="1"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:lineSpacingExtra="0dp"
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="8dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B05"
@@ -113,10 +138,15 @@
                     android:layout_row="1"
                     android:layout_column="2"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:lineSpacingExtra="0dp"
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="8dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B06"
@@ -125,10 +155,15 @@
                     android:layout_row="2"
                     android:layout_column="0"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:lineSpacingExtra="0dp"
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="16dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B07"
@@ -137,10 +172,15 @@
                     android:layout_row="2"
                     android:layout_column="1"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:lineSpacingExtra="0dp"
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="16dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B08"
@@ -149,10 +189,15 @@
                     android:layout_row="2"
                     android:layout_column="2"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:lineSpacingExtra="0dp"
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="16dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B09"
@@ -161,10 +206,15 @@
                     android:layout_row="3"
                     android:layout_column="0"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:lineSpacingExtra="0dp"
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="24dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B10"
@@ -173,10 +223,15 @@
                     android:layout_row="3"
                     android:layout_column="1"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:lineSpacingExtra="0dp"
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="24dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B11"
@@ -185,10 +240,15 @@
                     android:layout_row="3"
                     android:layout_column="2"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:lineSpacingExtra="0dp"
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="24dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B12"
@@ -197,10 +257,15 @@
                     android:layout_row="4"
                     android:layout_column="0"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:lineSpacingExtra="0dp"
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="32dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B13"
@@ -209,10 +274,15 @@
                     android:layout_row="4"
                     android:layout_column="1"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:lineSpacingExtra="0dp"
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="32dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B14"
@@ -221,10 +291,15 @@
                     android:layout_row="4"
                     android:layout_column="2"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:lineSpacingExtra="0dp"
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="32dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B15"
@@ -233,10 +308,15 @@
                     android:layout_row="5"
                     android:layout_column="0"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:lineSpacingExtra="0dp"
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="40dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B16"
@@ -245,10 +325,15 @@
                     android:layout_row="5"
                     android:layout_column="1"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:lineSpacingExtra="0dp"
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="40dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B17"
@@ -257,10 +342,15 @@
                     android:layout_row="5"
                     android:layout_column="2"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:lineSpacingExtra="0dp"
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="40dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B18"
@@ -269,10 +359,15 @@
                     android:layout_row="6"
                     android:layout_column="0"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:lineSpacingExtra="0dp"
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="48dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B19"
@@ -281,10 +376,15 @@
                     android:layout_row="6"
                     android:layout_column="1"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:lineSpacingExtra="0dp"
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="48dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B20"
@@ -293,10 +393,15 @@
                     android:layout_row="6"
                     android:layout_column="2"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:lineSpacingExtra="0dp"
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="48dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B21"
@@ -305,10 +410,15 @@
                     android:layout_row="7"
                     android:layout_column="0"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:lineSpacingExtra="0dp"
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="56dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B22"
@@ -317,10 +427,15 @@
                     android:layout_row="7"
                     android:layout_column="1"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:lineSpacingExtra="0dp"
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="56dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B23"
@@ -329,10 +444,15 @@
                     android:layout_row="7"
                     android:layout_column="2"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:lineSpacingExtra="0dp"
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="56dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B24"
@@ -341,9 +461,14 @@
                     android:layout_row="8"
                     android:layout_column="0"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="64dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B25"
@@ -352,9 +477,14 @@
                     android:layout_row="8"
                     android:layout_column="1"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="64dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B26"
@@ -363,9 +493,14 @@
                     android:layout_row="8"
                     android:layout_column="2"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="64dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B27"
@@ -374,9 +509,14 @@
                     android:layout_row="9"
                     android:layout_column="0"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="72dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B28"
@@ -385,9 +525,14 @@
                     android:layout_row="9"
                     android:layout_column="1"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="72dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B29"
@@ -396,9 +541,14 @@
                     android:layout_row="9"
                     android:layout_column="2"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="72dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B30"
@@ -407,9 +557,14 @@
                     android:layout_row="10"
                     android:layout_column="0"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="80dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B31"
@@ -418,9 +573,14 @@
                     android:layout_row="10"
                     android:layout_column="1"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="80dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B32"
@@ -429,9 +589,14 @@
                     android:layout_row="10"
                     android:layout_column="2"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="80dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B33"
@@ -440,9 +605,14 @@
                     android:layout_row="11"
                     android:layout_column="0"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="88dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B34"
@@ -451,9 +621,14 @@
                     android:layout_row="11"
                     android:layout_column="1"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="88dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B35"
@@ -462,9 +637,14 @@
                     android:layout_row="11"
                     android:layout_column="2"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="88dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B36"
@@ -473,9 +653,14 @@
                     android:layout_row="12"
                     android:layout_column="0"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="96dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B37"
@@ -484,9 +669,14 @@
                     android:layout_row="12"
                     android:layout_column="1"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="96dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B38"
@@ -495,9 +685,14 @@
                     android:layout_row="12"
                     android:layout_column="2"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="96dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B39"
@@ -506,9 +701,14 @@
                     android:layout_row="13"
                     android:layout_column="0"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="104dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B40"
@@ -517,9 +717,14 @@
                     android:layout_row="13"
                     android:layout_column="1"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="104dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B41"
@@ -528,9 +733,14 @@
                     android:layout_row="13"
                     android:layout_column="2"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="104dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B42"
@@ -539,9 +749,14 @@
                     android:layout_row="14"
                     android:layout_column="0"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="112dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B43"
@@ -550,9 +765,14 @@
                     android:layout_row="14"
                     android:layout_column="1"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="112dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B44"
@@ -561,9 +781,14 @@
                     android:layout_row="14"
                     android:layout_column="2"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="112dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B45"
@@ -572,9 +797,14 @@
                     android:layout_row="15"
                     android:layout_column="0"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="120dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B46"
@@ -583,9 +813,14 @@
                     android:layout_row="15"
                     android:layout_column="1"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="120dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B47"
@@ -594,9 +829,14 @@
                     android:layout_row="15"
                     android:layout_column="2"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="120dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B48"
@@ -605,9 +845,14 @@
                     android:layout_row="16"
                     android:layout_column="0"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="128dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B49"
@@ -616,9 +861,14 @@
                     android:layout_row="16"
                     android:layout_column="1"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="128dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B50"
@@ -627,9 +877,14 @@
                     android:layout_row="16"
                     android:layout_column="2"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="128dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B51"
@@ -638,9 +893,14 @@
                     android:layout_row="17"
                     android:layout_column="0"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="136dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B52"
@@ -649,9 +909,14 @@
                     android:layout_row="17"
                     android:layout_column="1"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="136dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B53"
@@ -660,9 +925,14 @@
                     android:layout_row="17"
                     android:layout_column="2"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="136dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B54"
@@ -671,9 +941,14 @@
                     android:layout_row="18"
                     android:layout_column="0"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="144dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B55"
@@ -682,9 +957,14 @@
                     android:layout_row="18"
                     android:layout_column="1"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="144dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B56"
@@ -693,9 +973,14 @@
                     android:layout_row="18"
                     android:layout_column="2"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="144dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B57"
@@ -704,9 +989,14 @@
                     android:layout_row="19"
                     android:layout_column="0"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="152dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B58"
@@ -715,9 +1005,14 @@
                     android:layout_row="19"
                     android:layout_column="1"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="152dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B59"
@@ -726,9 +1021,14 @@
                     android:layout_row="19"
                     android:layout_column="2"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="152dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B60"
@@ -737,9 +1037,14 @@
                     android:layout_row="20"
                     android:layout_column="0"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="160dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B61"
@@ -748,9 +1053,14 @@
                     android:layout_row="20"
                     android:layout_column="1"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="160dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B62"
@@ -759,9 +1069,14 @@
                     android:layout_row="20"
                     android:layout_column="2"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="160dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B63"
@@ -770,9 +1085,14 @@
                     android:layout_row="21"
                     android:layout_column="0"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="168dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B64"
@@ -781,9 +1101,14 @@
                     android:layout_row="21"
                     android:layout_column="1"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="168dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B65"
@@ -792,9 +1117,14 @@
                     android:layout_row="21"
                     android:layout_column="2"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="168dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B66"
@@ -803,9 +1133,14 @@
                     android:layout_row="22"
                     android:layout_column="0"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="176dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B67"
@@ -814,9 +1149,14 @@
                     android:layout_row="22"
                     android:layout_column="1"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="176dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B68"
@@ -825,9 +1165,14 @@
                     android:layout_row="22"
                     android:layout_column="2"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="176dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B69"
@@ -836,9 +1181,14 @@
                     android:layout_row="23"
                     android:layout_column="0"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="184dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B70"
@@ -847,9 +1197,14 @@
                     android:layout_row="23"
                     android:layout_column="1"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="184dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B71"
@@ -858,9 +1213,14 @@
                     android:layout_row="23"
                     android:layout_column="2"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="184dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B72"
@@ -869,9 +1229,14 @@
                     android:layout_row="24"
                     android:layout_column="0"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="192dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B73"
@@ -880,9 +1245,14 @@
                     android:layout_row="24"
                     android:layout_column="1"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="192dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B74"
@@ -891,9 +1261,14 @@
                     android:layout_row="24"
                     android:layout_column="2"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="192dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B75"
@@ -902,9 +1277,14 @@
                     android:layout_row="25"
                     android:layout_column="0"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="200dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B76"
@@ -913,9 +1293,14 @@
                     android:layout_row="25"
                     android:layout_column="1"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="200dp"></Button>
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
                 <Button
                     android:id="@+id/B77"
@@ -924,6 +1309,7 @@
                     android:layout_row="25"
                     android:layout_column="2"
                     android:layout_marginLeft="8dp"
+<<<<<<< HEAD
                     android:text="Text"
                     android:textSize="14sp"
                     android:translationY="200dp"></Button>
@@ -934,6 +1320,10 @@
                     android:layout_height="320dp"
                     android:text="Button"
                     android:visibility="invisible" />
+=======
+                    android:onClick="cardButtonIsClicked"
+                    android:text="Text"></Button>
+>>>>>>> 0a3776e3e488b522ae3b6f18d9fd3e2c195b5d28
 
             </GridLayout>
         </LinearLayout>

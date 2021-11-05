@@ -28,7 +28,9 @@ public class ThreeCardSpread extends AppCompatActivity {
         // Initialize Deck
 
         // Initialize Deck for the First Time
+        /*
         try {
+
             InputStream input = getAssets().open("tarot_cards_spaced.txt");
             BufferedReader reader = new BufferedReader(new InputStreamReader(input));
 
@@ -48,10 +50,16 @@ public class ThreeCardSpread extends AppCompatActivity {
 
                  System.out.println(name);
              }
-
-        } catch (IOException ex) {
+             catch (IOException ex) {
             ex.printStackTrace();
         }
-
+             */
+        try {
+            for (int cardID = 0; cardID < TarotCard.NUM_TAROT_CARDS; cardID++) {
+                deck.add(TarotCard.readNewTarotCardByID(context, cardID));
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
 }

@@ -18,7 +18,7 @@ public class TarotCard implements Serializable
     private final String[] captions; // the things that go in the bubbles below the card, idk what they're called
     private final String description;
     private State state;
-    private static final int NUM_TAROT_CARDS = 78;
+    public static final int NUM_TAROT_CARDS = 78;
 
     // 'context' should be the result of the call getApplicationContext()
     public static TarotCard readNewTarotCardByID(Context context, int cardID) throws Exception
