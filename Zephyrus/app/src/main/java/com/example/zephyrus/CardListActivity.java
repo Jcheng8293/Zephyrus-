@@ -1,7 +1,6 @@
 package com.example.zephyrus;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -51,30 +50,26 @@ public class CardListActivity extends AppCompatActivity {
         });
 
         /***
-         * Dynamically give cards images
+         * Dynamically name buttons
          ***/
 
+
         try {
-            int imageNum = 1;
-            final String string = "SampleTarotCards/card";
-            final String fileType = ".png";
             InputStream file = getAssets().open("tarot_cards_spaced.txt");
-            Drawable image;
             BufferedReader reader = new BufferedReader(new InputStreamReader(file));
             for (int i = R.id.B00; i <= R.id.B77; i++) {
                 Button button = findViewById(i);
-                image = Drawable.createFromStream(getAssets().open(string + imageNum + fileType), null);
+
                 // Unknown reason... leave it alone
                 if (i == R.id.B73) {
                     reader.readLine();
                 }
                 String line = reader.readLine();
-                button.setForeground(image);
-
+                button.setText(line);
                 for (int j = 0; j < 7; j++) {
                     reader.readLine();
                 }
-                imageNum++;
+
             }
 
         } catch (IOException e) {
