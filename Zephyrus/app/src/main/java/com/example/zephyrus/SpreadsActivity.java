@@ -56,7 +56,9 @@ public class SpreadsActivity extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(SpreadsActivity.this, ThreeCardSpread.class));
+                Intent intent = new Intent(SpreadsActivity.this, ThreeCardSpread.class);
+                // intent.putExtra("deck", deck);
+                startActivity(intent);
             }
         }
         );
@@ -65,7 +67,9 @@ public class SpreadsActivity extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(SpreadsActivity.this, ThreeCardSpread.class));
+                Intent intent = new Intent(SpreadsActivity.this, ThreeCardSpread.class);
+                // intent,putExtra("deck", deck);
+                startActivity(intent);
             }
         }
         );

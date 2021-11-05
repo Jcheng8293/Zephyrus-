@@ -1,19 +1,18 @@
 package com.example.zephyrus;
 
-import android.app.ActivityOptions;
-import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.widget.SeekBar;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -98,7 +97,7 @@ public class CalendarActivity extends AppCompatActivity {
         Date firstDateOfThisMonth = new Date(today.getYear(), today.getMonth(), 1);
         int firstWeekdayOfMonth = firstDateOfThisMonth.getDay();
 
-        TableLayout calendarCellLayout = (TableLayout) findViewById(R.id.calendarTableLayout);
+        TableLayout calendarCellLayout = findViewById(R.id.calendarTableLayout);
         TableRow.LayoutParams rowLayoutParams = new TableRow.LayoutParams();
         rowLayoutParams.weight = 1; // make all rows have the same height
 
@@ -111,7 +110,7 @@ public class CalendarActivity extends AppCompatActivity {
             {
                 int cellNumber = row * 7 + col;
                 int calendarSquaresDayOfMonth = cellNumber + 1 - firstWeekdayOfMonth;
-                CalendarSquare calendarSquare;
+                CalendarSquare calendarSquare = null;
                 // if it's a square in the calendar that isn't associated with an actual day
                 if (calendarSquaresDayOfMonth <= 0 || calendarSquaresDayOfMonth > daysInCurrentMonth) {
                     calendarSquare = new CalendarSquare(this, null, null);
@@ -129,8 +128,12 @@ public class CalendarActivity extends AppCompatActivity {
                                 daysCard.getImage());
                     }
                     else {
-                        calendarSquare = new CalendarSquare(this, calendarSquaresDayOfMonth,
-                                null); // TODO: replace this 'null' with an image of the back of a card once we have the card images made
+                        try {
+                            calendarSquare = new CalendarSquare(this, calendarSquaresDayOfMonth,
+                                    getDrawableImage());
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                     }
                 }
 
@@ -168,6 +171,13 @@ public class CalendarActivity extends AppCompatActivity {
             }
             calendarCellLayout.addView(calendarRow);
         }
+    }
+
+    private Drawable getDrawableImage() throws IOException {
+        Drawable image;
+        InputStream file = getAssets().open("Tarot_Back_Idea_1.png");
+        image = Drawable.createFromStream(file, null);
+        return image;
     }
 
     public void calendarSquareClickedCallback(CalendarSquare calendarSquare)

@@ -36,7 +36,7 @@
         android:layout_width="120dp"
         android:layout_height="180dp"
         android:contentDescription="@string/this_is_the_imageview_for_the_currently_selected_day_s_tarot_card"
-        android:src="@drawable/placeholder_back_of_card"
+        android:src="@drawable/tarot_back_idea_1"
         app:layout_constraintBottom_toTopOf="@+id/monthNameTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
