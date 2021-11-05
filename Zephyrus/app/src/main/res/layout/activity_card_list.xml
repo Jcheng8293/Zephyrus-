@@ -86,7 +86,7 @@
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
                     android:text="Text"
-                    android:translationY="0dp" />
+                    android:translationY="0dp"></Button>
 
                 <Button
                     android:id="@+id/B02"

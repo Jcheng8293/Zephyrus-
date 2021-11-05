@@ -48,7 +48,7 @@ public class MonthlyTarotHistory implements Serializable {
         Random r = new Random();
         int randCardID;
         do {
-            randCardID = r.nextInt(72);
+            randCardID = r.nextInt(TarotCard.NUM_TAROT_CARDS);
         } while(this.containsCardWithID(randCardID));
         return randCardID;
     }

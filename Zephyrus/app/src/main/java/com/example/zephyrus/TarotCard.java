@@ -1,7 +1,12 @@
 package com.example.zephyrus;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.widget.Toast;
 
 import java.io.InputStream;
 import java.io.Serializable;
@@ -17,118 +22,60 @@ public class TarotCard implements Serializable
     private final String[] captions; // the things that go in the bubbles below the card, idk what they're called
     private final String[] description;
     private State state;
-    public static final int NUM_TAROT_CARDS = 78;
+    public static final int NUM_TAROT_CARDS = 156;
 
-    /***
-     * Added a copy of the method below for Card List Activity for reversed cards
-     * It is probably redundant
-     * Maybe one of you guys can check it out
-     * STUFF I CHANGES TO MAKE IT WORK
-     * CardListActivity: Line 93.
-     * TarotCard: Line 72 (Technically added)
-     * CardFacts: Line 19. Line 39
-     * WHY?
-     * Adding 78 to cardID in CardListActivity (or anywhere) breaks it
-     * Personally, I think adding a state variable to the method makes it easier
-     * Instead of 0 = normal, +1 = reversed
-     ***/
     // 'context' should be the result of the call getApplicationContext()
-
-    public static TarotCard readNewTarotCardByID(Context context, int cardID) throws Exception
+    public static TarotCard readNewTarotCardByID(Context context, int cardID)
     {
         if(cardID < 0 || cardID >= NUM_TAROT_CARDS)
             throw new IllegalArgumentException("cardID must be [0, " + NUM_TAROT_CARDS +"), but was given " + cardID);
 
-        // In Method Variables
-        InputStream in_stream = context.getAssets().open("tarot_cards_info.txt");
+        InputStream in_stream = null;
+        try {
+            in_stream = context.getAssets().open("tarot_cards_info.txt");
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+            System.exit(-1);
+        }
+
         Scanner textScanner = new Scanner(in_stream);
-        String cardName = "";
-        int cardPairsToSkip;
-
-        // If ID is above 78 (Reversed)
-        State cardState = cardID - 78 <= 0 ? State.NORMAL : State.REVERSED;
-
-        // If reversed (79-156) = (1-78)
-        if (cardState == State.REVERSED) {
-            cardPairsToSkip = cardID - 78;
-        }
-        else {
-            cardPairsToSkip = cardID;
-        }
-
-        // Skips # of lines in .txt file
+        int cardPairsToSkip = cardID / 2;
         for(int i = 0; i < cardPairsToSkip; i++)
         {
             for(int j = 0; j < 7; j++)
                 textScanner.nextLine();
         }
-
-
+        String cardName = textScanner.nextLine();
+        State cardState = cardID % 2 == 0 ? State.NORMAL : State.REVERSED;
         if(cardState == State.REVERSED)
         {
-            cardName += "Reverse " + textScanner.nextLine();;
+            cardName += "Reverse " + cardName;
             for(int j = 0; j < 3; j++)
                 textScanner.nextLine();
         }
-        else {
-            cardName = textScanner.nextLine();
-        }
-
-        String[] captions =  new String[3];
+        String[] captions = new String[3];
         for(int k = 0; k < 3; k++)
             captions[k] = textScanner.nextLine();
 
-        String imageFilename = "SampleTarotCards/card" + (cardID + 1) + ".png";
-        // Toast.makeText(context, "Card #" + cardID + " = " + cardName, Toast.LENGTH_LONG).show();
+        String imageFilename = "SampleTarotCards/card" + (cardID/2 + 1) + ".png";
         return new TarotCard(cardID, context, imageFilename, cardName, captions, new String[]{"There are no descriptions for now."}, cardState);
     }
 
-    // This line is probably redundant
-    public static TarotCard readNewTarotCardByID(Context context, int cardID, TarotCard.State state) throws Exception
+    private TarotCard(int cardID, Context context, String imageFilePath, String name, String[] captions, String[] description, State state)
     {
-        if(cardID < 0 || cardID >= NUM_TAROT_CARDS)
-            throw new IllegalArgumentException("cardID must be [0, " + NUM_TAROT_CARDS +"), but was given " + cardID);
-
-        // In Method Variables
-        InputStream in_stream = context.getAssets().open("tarot_cards_info.txt");
-        Scanner textScanner = new Scanner(in_stream);
-        String cardName = "";
-
-        // Skips # of lines in .txt file
-        for(int i = 0; i < cardID; i++)
-        {
-            for(int j = 0; j < 7; j++)
-                textScanner.nextLine();
-        }
-
-        if(state == State.REVERSED)
-        {
-            cardName += "Reverse " + textScanner.nextLine();;
-            for(int j = 0; j < 3; j++)
-                textScanner.nextLine();
-        }
-        else {
-            cardName = textScanner.nextLine();
-        }
-
-        String[] captions =  new String[3];
-        for(int k = 0; k < 3; k++)
-            captions[k] = textScanner.nextLine();
-
-        String imageFilename = "SampleTarotCards/card" + (cardID + 1) + ".png";
-        // Toast.makeText(context, "Card #" + cardID + " = " + cardName, Toast.LENGTH_LONG).show();
-        return new TarotCard(cardID, context, imageFilename, cardName, captions, new String[]{"There are no descriptions for now."} , state);
+        this(cardID, context, getDrawableFromFilePath(context, imageFilePath), name, captions, description, state);
     }
 
-    private TarotCard(int cardID, Context context, String imageFilePath, String name, String[] captions, String[] description, State state) throws Exception
-    {
-        this(cardID, getDrawableFromFilePath(context, imageFilePath), name, captions, description, state);
-    }
-
-    private TarotCard(int cardID, Drawable image, String name, String[] captions, String[] description, State state)
+    private TarotCard(int cardID, Context context, Drawable image, String name, String[] captions, String[] description, State state)
     {
         if(description == null)
             throw new IllegalArgumentException("description cannot be null");
+
+        if(description.length == 1)
+            description = new String[]{description[0], description[0]}; // just now for debugging, copy normal and reverse descriptions
+
         if(captions == null)
             throw new IllegalArgumentException("captions cannot be null");
         if(captions.length != 3)
@@ -139,12 +86,44 @@ public class TarotCard implements Serializable
         this.state = state;
         this.captions = captions;
         this.description = description;
-        this.tarotCardImage = image;
+
+        if(state == State.REVERSED)
+            this.tarotCardImage = rotateCardImage(context, image);
+        else
+            this.tarotCardImage = image;
+
     }
 
-    private static Drawable getDrawableFromFilePath(Context context, String imageFilePath) throws Exception
+    private static Drawable rotateCardImage(Context context, Drawable image)
     {
-        InputStream ims = context.getAssets().open(imageFilePath);
+        Bitmap bitmap = drawableToBitmap(image);
+        Matrix rotationMatrix = new Matrix();
+        rotationMatrix.postRotate(180);
+        Bitmap rotatedBitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), rotationMatrix, true);
+        return new BitmapDrawable(context.getResources(), rotatedBitmap);
+    }
+
+    public TarotCard getReverseOfCard(Context context) throws Exception
+    {
+        int reverseCardsID = this.getCardID();
+        if(this.state == State.NORMAL)
+            reverseCardsID++;
+        else
+            reverseCardsID--;
+        return TarotCard.readNewTarotCardByID(context, reverseCardsID);
+    }
+
+    private static Drawable getDrawableFromFilePath(Context context, String imageFilePath)
+    {
+        InputStream ims = null;
+        try {
+            ims = context.getAssets().open(imageFilePath);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+            System.exit(-1);
+        }
         return Drawable.createFromStream(ims, null);
     }
 
@@ -155,6 +134,14 @@ public class TarotCard implements Serializable
     public int getCardID() { return this.cardID; }
     public String getCardName() { return this.name; }
     public void setState(State state) { this.state = state; }
+
+    public static State flipState(State state)
+    {
+        if(state == State.NORMAL)
+            return State.REVERSED;
+        else
+            return State.NORMAL;
+    }
 
     public boolean equals(Object o)
     {
@@ -194,5 +181,24 @@ public class TarotCard implements Serializable
             else
                 card.state = State.NORMAL;
         }
+    }
+
+    private static Bitmap drawableToBitmap (Drawable drawable) {
+        Bitmap bitmap;
+        if (drawable instanceof BitmapDrawable) {
+            BitmapDrawable bitmapDrawable = (BitmapDrawable) drawable;
+            if(bitmapDrawable.getBitmap() != null) {
+                return bitmapDrawable.getBitmap();
+            }
+        }
+        if(drawable.getIntrinsicWidth() <= 0 || drawable.getIntrinsicHeight() <= 0) {
+            bitmap = Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888); // Single color bitmap will be created of 1x1 pixel
+        } else {
+            bitmap = Bitmap.createBitmap(drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
+        }
+        Canvas canvas = new Canvas(bitmap);
+        drawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
+        drawable.draw(canvas);
+        return bitmap;
     }
 }

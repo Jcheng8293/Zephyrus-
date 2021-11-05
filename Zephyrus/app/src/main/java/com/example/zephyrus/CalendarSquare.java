@@ -64,7 +64,8 @@ public class CalendarSquare extends AppCompatButton implements View.OnClickListe
             height = width = getHeight();
             int centerY = height / 2;
             int centerX = width / 2;
-            if(this.tarotCardImage != null) {
+            if(this.tarotCardImage != null)
+            {
                 double cardImageAspectRatio = (double) tarotCardImage.getIntrinsicWidth() / tarotCardImage.getIntrinsicHeight();
                 double cardImageWidth = width / 2;
                 double cardImageHeight = cardImageWidth / cardImageAspectRatio;
