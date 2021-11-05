@@ -20,8 +20,8 @@
         app:menu="@menu/navigation" />
 
     <ScrollView
-        android:layout_width="409dp"
-        android:layout_height="673dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/spreads_navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,6 +45,7 @@
                 android:id="@+id/past_present_future_button"
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
+                android:onClick="toThreeCardSpread"
                 android:text="Past, Present, Future"
                 android:textSize="20sp" />
 
@@ -52,6 +53,7 @@
                 android:id="@+id/filler_button"
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
+                android:onClick="toThreeCardSpread"
                 android:text="Filler"
                 android:textSize="20sp" />
         </LinearLayout>

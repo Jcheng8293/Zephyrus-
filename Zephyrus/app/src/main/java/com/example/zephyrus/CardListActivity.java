@@ -16,10 +16,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -65,25 +61,7 @@ public class CardListActivity extends AppCompatActivity {
         this.tarotCards = readAllTarotCards();
         setCardButtonsImages();
         setReverseButtonTitle();
-        /*
-        try {
-            int imageNum = 1;
-            final String string = "SampleTarotCards/card";
-            final String fileType = ".png";
-            Drawable image;
-            for (int i = R.id.B00; i <= R.id.B77; i++) {
-                Button button = findViewById(i);
-                image = Drawable.createFromStream(getAssets().open(string + imageNum + fileType), null);
-                button.setForeground(image);
-                imageNum++;
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-         */
-        /*
-         * Reversed Dem Cards
-         */
+
         Button button = findViewById(R.id.reverseMe);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,24 +69,6 @@ public class CardListActivity extends AppCompatActivity {
                 CardListActivity.this.displayCardsInState = TarotCard.flipState(CardListActivity.this.displayCardsInState);
                 setCardButtonsImages();
                 setReverseButtonTitle();
-                /*
-                for (int i = R.id.B00; i <= R.id.B77; i++)
-                {
-                    Button b = findViewById(i);
-                    if(isShowingReversedCards)
-                    {
-                        b.setText
-                    }
-                    if (b.getRotation() == 0) {
-                        b.setText("REVERSED");
-                        b.setRotation(180);
-                    }
-                    else {
-                        b.setText("NORMAL");
-                        b.setRotation(0);
-                    }
-                }
-                 */
             }
         });
     }
@@ -146,14 +106,7 @@ public class CardListActivity extends AppCompatActivity {
                 b.setForeground(tarotCards[currentCardIndex].getImage());
             }
         }
-        /*
 
-        for(int i = R.id.B00; i <= R.id.B77; i++, currentCardIndex++)
-        {
-            Button b = findViewById(i);
-            b.setForeground(tarotCards[currentCardIndex].getImage());
-        }
-         */
     }
     public int getCardIDFromViewID(int viewID)
     {
@@ -177,16 +130,6 @@ public class CardListActivity extends AppCompatActivity {
     }
     public void cardButtonIsClicked(View v)
     {
-        /*
-        int cardID = v.getId() - R.id.B00; // assumes all the IDs are sequential
-        Button button = findViewById(R.id.B00);
-        if (button.getRotation() == 180) {
-            cardFactsIntent.putExtra("State", TarotCard.State.REVERSED);
-        }
-        else {
-            cardFactsIntent.putExtra("State", TarotCard.State.NORMAL);
-        }
-         */
         int cardID = getCardIDFromViewID(v.getId());
         Intent cardFactsIntent = new Intent(this, CardFacts.class);
         cardFactsIntent.putExtra("TarotCardID", cardID);

@@ -1,22 +1,34 @@
 package com.example.zephyrus;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+
 public class SpreadsActivity extends AppCompatActivity {
+
+    int[] deck = new int[78];
 
     @SuppressLint("NonConstantResourceId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spreads);
+
 
         /****
          * Bottom Navigation Bar Code
@@ -45,35 +57,49 @@ public class SpreadsActivity extends AppCompatActivity {
             }
             return false;
         });
+    }
 
-        /*****
-         * Three Card Spreads
-         ****/
-        Button button1 = findViewById(R.id.past_present_future_button);
-        Button button2 = findViewById(R.id.filler_button);
+    /*****
+     * Three Card Spreads
+     ****/
+    public void toThreeCardSpread(View v) throws IOException {
+            deck = initialize();
+            Intent intent = new Intent(SpreadsActivity.this, ThreeCardSpread.class);
+            intent.putExtra("deck", deck);
+            startActivity(intent);
+    }
 
-        // Past Present Future
-        button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(SpreadsActivity.this, ThreeCardSpread.class);
-                // intent.putExtra("deck", deck);
-                startActivity(intent);
+    private int[] initialize() throws IOException {
+        Context appContext = getApplicationContext();
+        File applicationFilesDir = appContext.getFilesDir();
+        String filename = "deck.txt";
+        FileInputStream fIn = new FileInputStream(new File(applicationFilesDir, filename));
+        BufferedReader reader = new BufferedReader(new InputStreamReader(fIn));
+        File deckFile = new File(applicationFilesDir, filename);
+        int[] deck = new int[78];
+
+        // Initializes deck via File
+        if (!reader.readLine().equals("")) {
+
+            for (int i = 0; i < deck.length; i++) {
+                try {
+                    deck[i] = Integer.parseInt(reader.readLine());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
-        );
+        // Initializes deck for the first time
+        else {
+            FileOutputStream fOut = new FileOutputStream(deckFile);
+            BufferedWriter write = new BufferedWriter(new OutputStreamWriter(fOut));
 
-        // Unknown
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(SpreadsActivity.this, ThreeCardSpread.class);
-                // intent,putExtra("deck", deck);
-                startActivity(intent);
+            for (int i = 0; i < TarotCard.NUM_TAROT_CARDS; i++) {
+                write.write(i);
+                deck[i] = i * 2;
             }
         }
-        );
-
+        return deck;
     }
 
 }
