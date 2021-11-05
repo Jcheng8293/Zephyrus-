@@ -7,6 +7,18 @@
     android:minWidth="100dp"
     tools:context=".CardListActivity">
 
+    <Button
+        android:id="@+id/reverseMe"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:text="NORMAL"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/scrollView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/cardlist_navigation"
         android:layout_width="0dp"
@@ -17,11 +29,19 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/navigation" />
+        app:menu="@menu/navigation">
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
 
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:id="@+id/scrollView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintBottom_toBottomOf="@id/cardlist_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/reverseMe">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -52,7 +72,10 @@
                     android:layout_column="0"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:rotation="0"
+                    android:rotationX="0"
+                    android:text="Text"
+                    android:translationY="0dp"></Button>
 
                 <Button
                     android:id="@+id/B01"
@@ -62,7 +85,8 @@
                     android:layout_column="1"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="0dp" />
 
                 <Button
                     android:id="@+id/B02"
@@ -72,7 +96,8 @@
                     android:layout_column="2"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="0dp"></Button>
 
                 <Button
                     android:id="@+id/B03"
@@ -82,7 +107,8 @@
                     android:layout_column="0"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="8dp"></Button>
 
                 <Button
                     android:id="@+id/B04"
@@ -92,7 +118,8 @@
                     android:layout_column="1"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="8dp"></Button>
 
                 <Button
                     android:id="@+id/B05"
@@ -102,7 +129,8 @@
                     android:layout_column="2"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="8dp"></Button>
 
                 <Button
                     android:id="@+id/B06"
@@ -112,7 +140,8 @@
                     android:layout_column="0"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="16dp"></Button>
 
                 <Button
                     android:id="@+id/B07"
@@ -122,7 +151,8 @@
                     android:layout_column="1"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="16dp"></Button>
 
                 <Button
                     android:id="@+id/B08"
@@ -132,7 +162,8 @@
                     android:layout_column="2"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="16dp"></Button>
 
                 <Button
                     android:id="@+id/B09"
@@ -142,7 +173,8 @@
                     android:layout_column="0"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="24dp"></Button>
 
                 <Button
                     android:id="@+id/B10"
@@ -152,7 +184,8 @@
                     android:layout_column="1"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="24dp"></Button>
 
                 <Button
                     android:id="@+id/B11"
@@ -162,7 +195,8 @@
                     android:layout_column="2"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="24dp"></Button>
 
                 <Button
                     android:id="@+id/B12"
@@ -172,7 +206,8 @@
                     android:layout_column="0"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="32dp"></Button>
 
                 <Button
                     android:id="@+id/B13"
@@ -182,7 +217,8 @@
                     android:layout_column="1"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="32dp"></Button>
 
                 <Button
                     android:id="@+id/B14"
@@ -192,7 +228,8 @@
                     android:layout_column="2"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="32dp"></Button>
 
                 <Button
                     android:id="@+id/B15"
@@ -202,7 +239,8 @@
                     android:layout_column="0"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="40dp"></Button>
 
                 <Button
                     android:id="@+id/B16"
@@ -212,7 +250,8 @@
                     android:layout_column="1"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="40dp"></Button>
 
                 <Button
                     android:id="@+id/B17"
@@ -222,7 +261,8 @@
                     android:layout_column="2"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="40dp"></Button>
 
                 <Button
                     android:id="@+id/B18"
@@ -232,7 +272,8 @@
                     android:layout_column="0"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="48dp"></Button>
 
                 <Button
                     android:id="@+id/B19"
@@ -242,7 +283,8 @@
                     android:layout_column="1"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="48dp"></Button>
 
                 <Button
                     android:id="@+id/B20"
@@ -252,7 +294,8 @@
                     android:layout_column="2"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="48dp"></Button>
 
                 <Button
                     android:id="@+id/B21"
@@ -262,7 +305,8 @@
                     android:layout_column="0"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="56dp"></Button>
 
                 <Button
                     android:id="@+id/B22"
@@ -272,7 +316,8 @@
                     android:layout_column="1"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="56dp"></Button>
 
                 <Button
                     android:id="@+id/B23"
@@ -282,7 +327,8 @@
                     android:layout_column="2"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="56dp"></Button>
 
                 <Button
                     android:id="@+id/B24"
@@ -292,7 +338,8 @@
                     android:layout_column="0"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="64dp"></Button>
 
                 <Button
                     android:id="@+id/B25"
@@ -302,7 +349,8 @@
                     android:layout_column="1"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="64dp"></Button>
 
                 <Button
                     android:id="@+id/B26"
@@ -312,7 +360,8 @@
                     android:layout_column="2"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="64dp"></Button>
 
                 <Button
                     android:id="@+id/B27"
@@ -322,7 +371,8 @@
                     android:layout_column="0"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="72dp"></Button>
 
                 <Button
                     android:id="@+id/B28"
@@ -332,7 +382,8 @@
                     android:layout_column="1"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="72dp"></Button>
 
                 <Button
                     android:id="@+id/B29"
@@ -342,7 +393,8 @@
                     android:layout_column="2"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="72dp"></Button>
 
                 <Button
                     android:id="@+id/B30"
@@ -352,7 +404,8 @@
                     android:layout_column="0"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="80dp"></Button>
 
                 <Button
                     android:id="@+id/B31"
@@ -362,7 +415,8 @@
                     android:layout_column="1"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="80dp"></Button>
 
                 <Button
                     android:id="@+id/B32"
@@ -372,7 +426,8 @@
                     android:layout_column="2"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="80dp"></Button>
 
                 <Button
                     android:id="@+id/B33"
@@ -382,7 +437,8 @@
                     android:layout_column="0"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="88dp"></Button>
 
                 <Button
                     android:id="@+id/B34"
@@ -392,7 +448,8 @@
                     android:layout_column="1"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="88dp"></Button>
 
                 <Button
                     android:id="@+id/B35"
@@ -402,7 +459,8 @@
                     android:layout_column="2"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="88dp"></Button>
 
                 <Button
                     android:id="@+id/B36"
@@ -412,7 +470,8 @@
                     android:layout_column="0"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="96dp"></Button>
 
                 <Button
                     android:id="@+id/B37"
@@ -422,7 +481,8 @@
                     android:layout_column="1"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="96dp"></Button>
 
                 <Button
                     android:id="@+id/B38"
@@ -432,7 +492,8 @@
                     android:layout_column="2"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="96dp"></Button>
 
                 <Button
                     android:id="@+id/B39"
@@ -442,7 +503,8 @@
                     android:layout_column="0"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="104dp"></Button>
 
                 <Button
                     android:id="@+id/B40"
@@ -452,7 +514,8 @@
                     android:layout_column="1"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="104dp"></Button>
 
                 <Button
                     android:id="@+id/B41"
@@ -462,7 +525,8 @@
                     android:layout_column="2"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="104dp"></Button>
 
                 <Button
                     android:id="@+id/B42"
@@ -472,7 +536,8 @@
                     android:layout_column="0"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="112dp"></Button>
 
                 <Button
                     android:id="@+id/B43"
@@ -482,7 +547,8 @@
                     android:layout_column="1"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="112dp"></Button>
 
                 <Button
                     android:id="@+id/B44"
@@ -492,7 +558,8 @@
                     android:layout_column="2"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="112dp"></Button>
 
                 <Button
                     android:id="@+id/B45"
@@ -502,7 +569,8 @@
                     android:layout_column="0"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="120dp"></Button>
 
                 <Button
                     android:id="@+id/B46"
@@ -512,7 +580,8 @@
                     android:layout_column="1"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="120dp"></Button>
 
                 <Button
                     android:id="@+id/B47"
@@ -522,7 +591,8 @@
                     android:layout_column="2"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="120dp"></Button>
 
                 <Button
                     android:id="@+id/B48"
@@ -532,7 +602,8 @@
                     android:layout_column="0"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="128dp"></Button>
 
                 <Button
                     android:id="@+id/B49"
@@ -542,7 +613,8 @@
                     android:layout_column="1"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="128dp"></Button>
 
                 <Button
                     android:id="@+id/B50"
@@ -552,7 +624,8 @@
                     android:layout_column="2"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="128dp"></Button>
 
                 <Button
                     android:id="@+id/B51"
@@ -562,7 +635,8 @@
                     android:layout_column="0"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="136dp"></Button>
 
                 <Button
                     android:id="@+id/B52"
@@ -572,7 +646,8 @@
                     android:layout_column="1"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="136dp"></Button>
 
                 <Button
                     android:id="@+id/B53"
@@ -582,7 +657,8 @@
                     android:layout_column="2"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="136dp"></Button>
 
                 <Button
                     android:id="@+id/B54"
@@ -592,7 +668,8 @@
                     android:layout_column="0"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="144dp"></Button>
 
                 <Button
                     android:id="@+id/B55"
@@ -602,7 +679,8 @@
                     android:layout_column="1"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="144dp"></Button>
 
                 <Button
                     android:id="@+id/B56"
@@ -612,7 +690,8 @@
                     android:layout_column="2"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="144dp"></Button>
 
                 <Button
                     android:id="@+id/B57"
@@ -622,7 +701,8 @@
                     android:layout_column="0"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="152dp"></Button>
 
                 <Button
                     android:id="@+id/B58"
@@ -632,7 +712,8 @@
                     android:layout_column="1"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="152dp"></Button>
 
                 <Button
                     android:id="@+id/B59"
@@ -642,7 +723,8 @@
                     android:layout_column="2"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="152dp"></Button>
 
                 <Button
                     android:id="@+id/B60"
@@ -652,7 +734,8 @@
                     android:layout_column="0"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="160dp"></Button>
 
                 <Button
                     android:id="@+id/B61"
@@ -662,7 +745,8 @@
                     android:layout_column="1"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="160dp"></Button>
 
                 <Button
                     android:id="@+id/B62"
@@ -672,7 +756,8 @@
                     android:layout_column="2"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="160dp"></Button>
 
                 <Button
                     android:id="@+id/B63"
@@ -682,7 +767,8 @@
                     android:layout_column="0"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="168dp"></Button>
 
                 <Button
                     android:id="@+id/B64"
@@ -692,7 +778,8 @@
                     android:layout_column="1"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="168dp"></Button>
 
                 <Button
                     android:id="@+id/B65"
@@ -702,7 +789,8 @@
                     android:layout_column="2"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="168dp"></Button>
 
                 <Button
                     android:id="@+id/B66"
@@ -712,7 +800,8 @@
                     android:layout_column="0"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="176dp"></Button>
 
                 <Button
                     android:id="@+id/B67"
@@ -722,7 +811,8 @@
                     android:layout_column="1"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="176dp"></Button>
 
                 <Button
                     android:id="@+id/B68"
@@ -732,7 +822,8 @@
                     android:layout_column="2"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="176dp"></Button>
 
                 <Button
                     android:id="@+id/B69"
@@ -742,7 +833,8 @@
                     android:layout_column="0"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="184dp"></Button>
 
                 <Button
                     android:id="@+id/B70"
@@ -752,7 +844,8 @@
                     android:layout_column="1"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="184dp"></Button>
 
                 <Button
                     android:id="@+id/B71"
@@ -762,7 +855,8 @@
                     android:layout_column="2"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="184dp"></Button>
 
                 <Button
                     android:id="@+id/B72"
@@ -772,7 +866,8 @@
                     android:layout_column="0"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="192dp"></Button>
 
                 <Button
                     android:id="@+id/B73"
@@ -782,7 +877,8 @@
                     android:layout_column="1"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="192dp"></Button>
 
                 <Button
                     android:id="@+id/B74"
@@ -792,7 +888,8 @@
                     android:layout_column="2"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="192dp"></Button>
 
                 <Button
                     android:id="@+id/B75"
@@ -802,7 +899,8 @@
                     android:layout_column="0"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="200dp"></Button>
 
                 <Button
                     android:id="@+id/B76"
@@ -812,7 +910,8 @@
                     android:layout_column="1"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="200dp"></Button>
 
                 <Button
                     android:id="@+id/B77"
@@ -822,7 +921,15 @@
                     android:layout_column="2"
                     android:layout_marginLeft="8dp"
                     android:onClick="cardButtonIsClicked"
-                    android:text="Text"></Button>
+                    android:text="Text"
+                    android:translationY="200dp"></Button>
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="240dp"
+                    android:text="Button"
+                    android:visibility="invisible" />
 
             </GridLayout>
         </LinearLayout>

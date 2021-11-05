@@ -2,7 +2,6 @@ package com.example.zephyrus;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.widget.Toast;
 
 import java.io.InputStream;
 import java.io.Serializable;
@@ -20,29 +19,61 @@ public class TarotCard implements Serializable
     private State state;
     public static final int NUM_TAROT_CARDS = 78;
 
+    /***
+     * Added a copy of the method below for Card List Activity for reversed cards
+     * It is probably redundant
+     * Maybe one of you guys can check it out
+     * STUFF I CHANGES TO MAKE IT WORK
+     * CardListActivity: Line 93.
+     * TarotCard: Line 72 (Technically added)
+     * CardFacts: Line 19. Line 39
+     * WHY?
+     * Adding 78 to cardID in CardListActivity (or anywhere) breaks it
+     * Personally, I think adding a state variable to the method makes it easier
+     * Instead of 0 = normal, +1 = reversed
+     ***/
     // 'context' should be the result of the call getApplicationContext()
+
     public static TarotCard readNewTarotCardByID(Context context, int cardID) throws Exception
     {
         if(cardID < 0 || cardID >= NUM_TAROT_CARDS)
             throw new IllegalArgumentException("cardID must be [0, " + NUM_TAROT_CARDS +"), but was given " + cardID);
 
+        // In Method Variables
         InputStream in_stream = context.getAssets().open("tarot_cards_info.txt");
-
         Scanner textScanner = new Scanner(in_stream);
-        int cardPairsToSkip = cardID / 2;
+        String cardName = "";
+        int cardPairsToSkip;
+
+        // If ID is above 78 (Reversed)
+        State cardState = cardID - 78 <= 0 ? State.NORMAL : State.REVERSED;
+
+        // If reversed (79-156) = (1-78)
+        if (cardState == State.REVERSED) {
+            cardPairsToSkip = cardID - 78;
+        }
+        else {
+            cardPairsToSkip = cardID;
+        }
+
+        // Skips # of lines in .txt file
         for(int i = 0; i < cardPairsToSkip; i++)
         {
             for(int j = 0; j < 7; j++)
                 textScanner.nextLine();
         }
-        String cardName = textScanner.nextLine();
-        State cardState = cardID % 2 == 0 ? State.NORMAL : State.REVERSED;
+
+
         if(cardState == State.REVERSED)
         {
-            cardName += " (Reversed)";
+            cardName += "Reverse " + textScanner.nextLine();;
             for(int j = 0; j < 3; j++)
                 textScanner.nextLine();
         }
+        else {
+            cardName = textScanner.nextLine();
+        }
+
         String[] captions =  new String[3];
         for(int k = 0; k < 3; k++)
             captions[k] = textScanner.nextLine();
@@ -50,6 +81,43 @@ public class TarotCard implements Serializable
         String imageFilename = "SampleTarotCards/card" + (cardID + 1) + ".png";
         // Toast.makeText(context, "Card #" + cardID + " = " + cardName, Toast.LENGTH_LONG).show();
         return new TarotCard(cardID, context, imageFilename, cardName, captions, "There are no descriptions for now.", cardState);
+    }
+
+    // This line is probably redundant
+    public static TarotCard readNewTarotCardByID(Context context, int cardID, TarotCard.State state) throws Exception
+    {
+        if(cardID < 0 || cardID >= NUM_TAROT_CARDS)
+            throw new IllegalArgumentException("cardID must be [0, " + NUM_TAROT_CARDS +"), but was given " + cardID);
+
+        // In Method Variables
+        InputStream in_stream = context.getAssets().open("tarot_cards_info.txt");
+        Scanner textScanner = new Scanner(in_stream);
+        String cardName = "";
+
+        // Skips # of lines in .txt file
+        for(int i = 0; i < cardID; i++)
+        {
+            for(int j = 0; j < 7; j++)
+                textScanner.nextLine();
+        }
+
+        if(state == State.REVERSED)
+        {
+            cardName += "Reverse " + textScanner.nextLine();;
+            for(int j = 0; j < 3; j++)
+                textScanner.nextLine();
+        }
+        else {
+            cardName = textScanner.nextLine();
+        }
+
+        String[] captions =  new String[3];
+        for(int k = 0; k < 3; k++)
+            captions[k] = textScanner.nextLine();
+
+        String imageFilename = "SampleTarotCards/card" + (cardID + 1) + ".png";
+        // Toast.makeText(context, "Card #" + cardID + " = " + cardName, Toast.LENGTH_LONG).show();
+        return new TarotCard(cardID, context, imageFilename, cardName, captions, "There are no descriptions for now.", state);
     }
 
     private TarotCard(int cardID, Context context, String imageFilePath, String name, String[] captions, String description, State state) throws Exception

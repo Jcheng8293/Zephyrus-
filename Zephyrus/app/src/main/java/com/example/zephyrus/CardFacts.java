@@ -16,9 +16,10 @@ public class CardFacts extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.card_facts);
         int tarotCardID = (int) getIntent().getSerializableExtra("TarotCardID");
+        TarotCard.State state = (TarotCard.State) getIntent().getSerializableExtra("State");
         TarotCard card = null;
         try {
-            card = TarotCard.readNewTarotCardByID(getApplicationContext(), tarotCardID);
+            card = TarotCard.readNewTarotCardByID(getApplicationContext(), tarotCardID, state);
         }
         catch (Exception e){}
 
@@ -34,6 +35,10 @@ public class CardFacts extends AppCompatActivity {
         bottomMeaningTextView.setText(captions[2]);
         descriptionTextView.setText(card.getDescription());
         tarotCardImageView.setImageDrawable(card.getImage());
+
+        if (TarotCard.State.REVERSED == state) {
+            tarotCardImageView.setRotation(180);
+        }
 
 
         /****

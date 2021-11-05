@@ -5,12 +5,7 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.io.BufferedReader;
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 public class ThreeCardSpread extends AppCompatActivity {
@@ -54,12 +49,5 @@ public class ThreeCardSpread extends AppCompatActivity {
             ex.printStackTrace();
         }
              */
-        try {
-            for (int cardID = 0; cardID < TarotCard.NUM_TAROT_CARDS; cardID++) {
-                deck.add(TarotCard.readNewTarotCardByID(context, cardID));
-            }
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
     }
 }
