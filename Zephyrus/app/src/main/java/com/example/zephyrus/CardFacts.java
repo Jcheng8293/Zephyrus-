@@ -30,10 +30,15 @@ public class CardFacts extends AppCompatActivity {
         ImageView tarotCardImageView = findViewById(R.id.tarotCardImageView);
 
         String[] captions = card.getCaptions();
+        String[] description = card.getDescription();
         topMeaningTextView.setText(captions[0]);
         centerMeaningTextView.setText(captions[1]);
         bottomMeaningTextView.setText(captions[2]);
-        descriptionTextView.setText(card.getDescription());
+        if (TarotCard.State.NORMAL == state) {
+            descriptionTextView.setText(description[0]);
+        } else {
+            descriptionTextView.setText(description[1]);
+        }
         tarotCardImageView.setImageDrawable(card.getImage());
 
         if (TarotCard.State.REVERSED == state) {

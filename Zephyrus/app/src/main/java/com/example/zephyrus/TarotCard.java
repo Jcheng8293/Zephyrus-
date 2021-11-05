@@ -15,7 +15,7 @@ public class TarotCard implements Serializable
     private final String name;
     private final Drawable tarotCardImage;
     private final String[] captions; // the things that go in the bubbles below the card, idk what they're called
-    private final String description;
+    private final String[] description;
     private State state;
     public static final int NUM_TAROT_CARDS = 78;
 
@@ -80,7 +80,7 @@ public class TarotCard implements Serializable
 
         String imageFilename = "SampleTarotCards/card" + (cardID + 1) + ".png";
         // Toast.makeText(context, "Card #" + cardID + " = " + cardName, Toast.LENGTH_LONG).show();
-        return new TarotCard(cardID, context, imageFilename, cardName, captions, "There are no descriptions for now.", cardState);
+        return new TarotCard(cardID, context, imageFilename, cardName, captions, new String[]{"There are no descriptions for now."}, cardState);
     }
 
     // This line is probably redundant
@@ -117,15 +117,15 @@ public class TarotCard implements Serializable
 
         String imageFilename = "SampleTarotCards/card" + (cardID + 1) + ".png";
         // Toast.makeText(context, "Card #" + cardID + " = " + cardName, Toast.LENGTH_LONG).show();
-        return new TarotCard(cardID, context, imageFilename, cardName, captions, "There are no descriptions for now.", state);
+        return new TarotCard(cardID, context, imageFilename, cardName, captions, new String[]{"There are no descriptions for now."} , state);
     }
 
-    private TarotCard(int cardID, Context context, String imageFilePath, String name, String[] captions, String description, State state) throws Exception
+    private TarotCard(int cardID, Context context, String imageFilePath, String name, String[] captions, String[] description, State state) throws Exception
     {
         this(cardID, getDrawableFromFilePath(context, imageFilePath), name, captions, description, state);
     }
 
-    private TarotCard(int cardID, Drawable image, String name, String[] captions, String description, State state)
+    private TarotCard(int cardID, Drawable image, String name, String[] captions, String[] description, State state)
     {
         if(description == null)
             throw new IllegalArgumentException("description cannot be null");
@@ -150,7 +150,7 @@ public class TarotCard implements Serializable
 
     public Drawable getImage() { return this.tarotCardImage; }
     public String[] getCaptions() { return this.captions; }
-    public String getDescription() { return this.description; }
+    public String[] getDescription() { return this.description; }
     public State getState() { return this.state; }
     public int getCardID() { return this.cardID; }
     public String getCardName() { return this.name; }
