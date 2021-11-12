@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,7 +20,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-public class SpreadsActivity extends AppCompatActivity {
+public class SpreadsActivity extends AnimatedActivity {
 
     int[] deck = new int[78];
 
@@ -27,6 +28,7 @@ public class SpreadsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setActivityTransitionAnimationDirection(Gravity.LEFT, Gravity.RIGHT);
         setContentView(R.layout.activity_spreads);
 
 
@@ -37,20 +39,21 @@ public class SpreadsActivity extends AppCompatActivity {
 
         navigation.setSelectedItemId(R.id.spreads_nav);
         navigation.setOnNavigationItemSelectedListener(item -> {
+            Bundle animationBundle = getAnimationOptions(SpreadsActivity.this).toBundle();
             switch (item.getItemId()) {
                 case R.id.calendar_nav:
                     Intent a = new Intent(SpreadsActivity.this, CalendarActivity.class);
-                    startActivity(a);
+                    startActivity(a, animationBundle);
                     break;
                 case R.id.spreads_nav:
                     break;
                 case R.id.cardList_nav:
                     Intent b = new Intent(SpreadsActivity.this, CardListActivity.class);
-                    startActivity(b);
+                    startActivity(b, animationBundle);
                     break;
                 case R.id.journal_nav:
                     Intent c = new Intent(SpreadsActivity.this, JournalActivity.class);
-                    startActivity(c);
+                    startActivity(c, animationBundle);
                     break;
                 default:
                     break;

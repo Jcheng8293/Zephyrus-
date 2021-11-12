@@ -1,7 +1,9 @@
 package com.example.zephyrus;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -9,12 +11,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class CardFacts extends AppCompatActivity {
+public class CardFacts extends AnimatedActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+        setActivityTransitionAnimationDirection(Gravity.RIGHT, Gravity.RIGHT);
         setContentView(R.layout.card_facts);
+
         int tarotCardID = (int) getIntent().getSerializableExtra("TarotCardID");
         // TarotCard.State state = (TarotCard.State) getIntent().getSerializableExtra("State");
         TarotCard card = null;
@@ -55,22 +61,24 @@ public class CardFacts extends AppCompatActivity {
 
         navigation.setSelectedItemId(R.id.cardList_nav);
         navigation.setOnNavigationItemSelectedListener(item -> {
+            Bundle animationBundle = getAnimationOptions(CardFacts.this).toBundle();
+
             switch (item.getItemId()) {
                 case R.id.calendar_nav:
                     Intent a = new Intent(CardFacts.this, CalendarActivity.class);
-                    startActivity(a);
+                    startActivity(a, animationBundle);
                     break;
                 case R.id.spreads_nav:
                     Intent b = new Intent(CardFacts.this, SpreadsActivity.class);
-                    startActivity(b);
+                    startActivity(b, animationBundle);
                     break;
                 case R.id.cardList_nav:
                     Intent c = new Intent(CardFacts.this, CardListActivity.class);
-                    startActivity(c);
+                    startActivity(c, animationBundle);
                     break;
                 case R.id.journal_nav:
                     Intent d = new Intent(CardFacts.this, JournalActivity.class);
-                    startActivity(d);
+                    startActivity(d, animationBundle);
                     break;
                 default:
                     break;

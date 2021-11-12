@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,14 +20,17 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class CardListActivity extends AppCompatActivity {
+public class CardListActivity extends AnimatedActivity {
 
     private TarotCard.State displayCardsInState = TarotCard.State.NORMAL;
     private TarotCard[] tarotCards;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+        setActivityTransitionAnimationDirection(Gravity.RIGHT, Gravity.LEFT);
         setContentView(R.layout.activity_card_list);
+
 
         /****
          * Bottom Navigation Bar Code
@@ -35,20 +39,21 @@ public class CardListActivity extends AppCompatActivity {
 
         navigation.setSelectedItemId(R.id.cardList_nav);
         navigation.setOnNavigationItemSelectedListener(item -> {
+            Bundle animationBundle = getAnimationOptions(CardListActivity.this).toBundle();
             switch (item.getItemId()) {
                 case R.id.calendar_nav:
                     Intent a = new Intent(CardListActivity.this, CalendarActivity.class);
-                    startActivity(a);
+                    startActivity(a, animationBundle);
                     break;
                 case R.id.spreads_nav:
                     Intent b = new Intent(CardListActivity.this, SpreadsActivity.class);
-                    startActivity(b);
+                    startActivity(b, animationBundle);
                     break;
                 case R.id.cardList_nav:
                     break;
                 case R.id.journal_nav:
                     Intent c = new Intent(CardListActivity.this, JournalActivity.class);
-                    startActivity(c);
+                    startActivity(c, animationBundle);
                     break;
                 default:
                     break;

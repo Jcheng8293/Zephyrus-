@@ -1,8 +1,14 @@
 package com.example.zephyrus;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
+import android.transition.Slide;
+import android.view.Gravity;
+import android.view.animation.AccelerateDecelerateInterpolator;
+import android.widget.SeekBar;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -16,7 +22,7 @@ import java.io.InputStream;
 import java.util.Calendar;
 import java.util.Date;
 
-public class CalendarActivity extends AppCompatActivity {
+public class CalendarActivity extends AnimatedActivity {
 
     // Do NOT use this to calculate the # of days in a month, use the method daysInMonth()
     private static int[] _daysInMonth = new int[] {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
@@ -43,7 +49,9 @@ public class CalendarActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setActivityTransitionAnimationDirection(Gravity.LEFT, Gravity.LEFT);
         setContentView(R.layout.activity_calendar);
+
 
         /****
          * Bottom Navigation Bar Code
@@ -52,20 +60,21 @@ public class CalendarActivity extends AppCompatActivity {
 
         navigation.setSelectedItemId(R.id.calendar_nav);
         navigation.setOnNavigationItemSelectedListener(item -> {
+            Bundle animationBundle = getAnimationOptions(CalendarActivity.this).toBundle();
             switch (item.getItemId()) {
                 case R.id.calendar_nav:
                     break;
                 case R.id.spreads_nav:
                     Intent a = new Intent(CalendarActivity.this, SpreadsActivity.class);
-                    startActivity(a);
+                    startActivity(a, animationBundle);
                     break;
                 case R.id.cardList_nav:
                     Intent b = new Intent(CalendarActivity.this, CardListActivity.class);
-                    startActivity(b);
+                    startActivity(b, animationBundle);
                     break;
                 case R.id.journal_nav:
                     Intent c = new Intent(CalendarActivity.this, JournalActivity.class);
-                    startActivity(c);
+                    startActivity(c, animationBundle);
                     break;
                 default:
                     break;
@@ -194,6 +203,6 @@ public class CalendarActivity extends AppCompatActivity {
         int cardID = thisMonthsTarotHistory.getTarotCardIDForDay(selectedDay);
         Intent cardFactsIntent = new Intent(this, CardFacts.class);
         cardFactsIntent.putExtra("TarotCardID", cardID);
-        startActivity(cardFactsIntent);
+        startActivity(cardFactsIntent, getAnimationOptions(CalendarActivity.this).toBundle());
     }
 }
