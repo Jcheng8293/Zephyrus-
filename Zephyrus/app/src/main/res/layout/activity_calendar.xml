@@ -5,7 +5,7 @@
     android:id="@+id/calendarConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/CalendarBackgroundColor"
+    android:background="@color/ActivityBackgroundColor"
     tools:context=".CalendarActivity">
 
     <TableLayout
@@ -67,7 +67,9 @@
         android:id="@+id/calender_navigation"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="?android:attr/windowBackground"
+        android:background="@color/NavBarBackground"
+        app:itemIconTint="@color/bottom_nav_color"
+        app:itemTextColor="@color/bottom_nav_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

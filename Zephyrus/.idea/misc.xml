@@ -22,8 +22,11 @@
         <entry key="..\:/Users/trozz/OneDrive/VCU/Sophomore/Software_Engineering/CMSC355AppProject/Zephyrus-/Zephyrus/app/src/main/res/drawable/ic_launcher_background.xml" value="0.19114583333333332" />
         <entry key="..\:/Users/trozz/OneDrive/VCU/Sophomore/Software_Engineering/CMSC355AppProject/Zephyrus-/Zephyrus/app/src/main/res/drawable/temporary.xml" value="0.3375" />
         <entry key="..\:/Users/trozz/OneDrive/VCU/Sophomore/Software_Engineering/CMSC355AppProject/Zephyrus-/Zephyrus/app/src/main/res/layout/activity_calendar.xml" value="0.32135416666666666" />
-        <entry key="..\:/Users/trozz/OneDrive/VCU/Sophomore/Software_Engineering/CMSC355AppProject/Zephyrus-/Zephyrus/app/src/main/res/layout/activity_journal.xml" value="0.32135416666666666" />
+        <entry key="..\:/Users/trozz/OneDrive/VCU/Sophomore/Software_Engineering/CMSC355AppProject/Zephyrus-/Zephyrus/app/src/main/res/layout/activity_card_list.xml" value="0.2518518518518518" />
+        <entry key="..\:/Users/trozz/OneDrive/VCU/Sophomore/Software_Engineering/CMSC355AppProject/Zephyrus-/Zephyrus/app/src/main/res/layout/activity_journal.xml" value="0.1" />
         <entry key="..\:/Users/trozz/OneDrive/VCU/Sophomore/Software_Engineering/CMSC355AppProject/Zephyrus-/Zephyrus/app/src/main/res/layout/activity_spreads.xml" value="0.32135416666666666" />
+        <entry key="..\:/Users/trozz/OneDrive/VCU/Sophomore/Software_Engineering/CMSC355AppProject/Zephyrus-/Zephyrus/app/src/main/res/layout/activity_three_card_spread.xml" value="0.32135416666666666" />
+        <entry key="..\:/Users/trozz/OneDrive/VCU/Sophomore/Software_Engineering/CMSC355AppProject/Zephyrus-/Zephyrus/app/src/main/res/layout/card_facts.xml" value="0.32135416666666666" />
       </map>
     </option>
   </component>

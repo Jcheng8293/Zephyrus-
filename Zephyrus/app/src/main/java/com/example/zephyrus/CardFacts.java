@@ -4,6 +4,7 @@ import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -58,7 +59,6 @@ public class CardFacts extends AnimatedActivity {
          * Bottom Navigation Bar Code
          ****/
         BottomNavigationView navigation = findViewById(R.id.card_facts_navigation);
-
         navigation.setSelectedItemId(R.id.cardList_nav);
         navigation.setOnNavigationItemSelectedListener(item -> {
             Bundle animationBundle = getAnimationOptions(CardFacts.this).toBundle();

@@ -52,12 +52,10 @@ public class CalendarActivity extends AnimatedActivity {
         setActivityTransitionAnimationDirection(Gravity.LEFT, Gravity.LEFT);
         setContentView(R.layout.activity_calendar);
 
-
         /****
          * Bottom Navigation Bar Code
          ****/
         BottomNavigationView navigation = findViewById(R.id.calender_navigation);
-
         navigation.setSelectedItemId(R.id.calendar_nav);
         navigation.setOnNavigationItemSelectedListener(item -> {
             Bundle animationBundle = getAnimationOptions(CalendarActivity.this).toBundle();
@@ -67,14 +65,17 @@ public class CalendarActivity extends AnimatedActivity {
                 case R.id.spreads_nav:
                     Intent a = new Intent(CalendarActivity.this, SpreadsActivity.class);
                     startActivity(a, animationBundle);
+                    overridePendingTransition(0,0);
                     break;
                 case R.id.cardList_nav:
                     Intent b = new Intent(CalendarActivity.this, CardListActivity.class);
                     startActivity(b, animationBundle);
+                    overridePendingTransition(0,0);
                     break;
                 case R.id.journal_nav:
                     Intent c = new Intent(CalendarActivity.this, JournalActivity.class);
                     startActivity(c, animationBundle);
+                    overridePendingTransition(0,0);
                     break;
                 default:
                     break;
@@ -180,6 +181,7 @@ public class CalendarActivity extends AnimatedActivity {
             }
             calendarCellLayout.addView(calendarRow);
         }
+
     }
 
     private Drawable getDrawableImage() throws IOException {

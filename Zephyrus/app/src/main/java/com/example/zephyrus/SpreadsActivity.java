@@ -36,7 +36,6 @@ public class SpreadsActivity extends AnimatedActivity {
          * Bottom Navigation Bar Code
          ****/
         BottomNavigationView navigation = findViewById(R.id.spreads_navigation);
-
         navigation.setSelectedItemId(R.id.spreads_nav);
         navigation.setOnNavigationItemSelectedListener(item -> {
             Bundle animationBundle = getAnimationOptions(SpreadsActivity.this).toBundle();

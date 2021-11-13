@@ -36,7 +36,6 @@ public class CardListActivity extends AnimatedActivity {
          * Bottom Navigation Bar Code
          ****/
         BottomNavigationView navigation = findViewById(R.id.cardlist_navigation);
-
         navigation.setSelectedItemId(R.id.cardList_nav);
         navigation.setOnNavigationItemSelectedListener(item -> {
             Bundle animationBundle = getAnimationOptions(CardListActivity.this).toBundle();

@@ -4,13 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background">
+    android:background="@color/ActivityBackgroundColor">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/card_facts_navigation"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="?android:attr/windowBackground"
+        android:background="@color/NavBarBackground"
+        app:itemIconTint="@color/bottom_nav_color"
+        app:itemTextColor="@color/bottom_nav_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -114,7 +116,7 @@
                 android:lineSpacingMultiplier="1.25"
                 android:text="Here is some sample text. If you can read this, then the tarot card did not load correctly. I am trying to pad this with words to be approximately the same length as a normal tarot card description. The quick brown fox jumped over the lazy dog. I could really go for some McNuggets right now. Here is some sample text. If you can read this, then the tarot card did not load correctly. I am trying to pad this with words to be approximately the same length as a normal tarot card description. The quick brown fox jumped over the lazy dog. I could really go for some McNuggets right now."
                 android:textAlignment="center"
-                android:textColor="#000000"
+                android:textColor="@color/ActivityTextColor"
                 android:textSize="18sp" />
         </LinearLayout>
     </ScrollView>

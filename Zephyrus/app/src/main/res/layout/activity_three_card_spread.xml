@@ -5,4 +5,5 @@
     android:id="@+id/testingText"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ThreeCardSpread"/>
+    android:background="@color/ActivityBackgroundColor"
+    tools:context=".ThreeCardSpread" />
