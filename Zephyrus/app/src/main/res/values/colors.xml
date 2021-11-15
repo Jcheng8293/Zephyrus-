@@ -9,11 +9,17 @@
     <color name="white">#FFFFFFFF</color>
     <color name="background">#FFFFFF</color>
     <color name="DailyTarotMeaningBackgroundColor">#2780F6</color>
-    <color name="CalendarMonthNameForegroundColor">#E4AE8C</color>
     <color name="ActivityBackgroundColor">#212121</color>
     <color name="ActivityTextColor">#FFFFFF</color>
+    <!--
+    <color name="CalendarMonthNameForegroundColor">#E4AE8C</color>
     <color name="CalendarUnusedSquare">#b3886d</color>
     <color name="CalendarUsedSquare">#E4AE8C</color>
+    -->
+    <color name="CalendarUnusedSquare">#986db3</color>
+    <color name="CalendarUsedSquare">#c18ce4</color>
+    <color name="CalendarMonthNameForegroundColor">#b58ce4</color>
+
     <color name="NavBarBackground">#2E2E2E</color>
     <color name="NavBarSelectedForeground">#AA88FF</color>
     <color name="NavBarUnselectedForeground">#735CAD</color>

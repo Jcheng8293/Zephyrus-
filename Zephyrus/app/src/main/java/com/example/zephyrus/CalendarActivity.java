@@ -34,10 +34,14 @@ public class CalendarActivity extends AnimatedActivity {
                                                       "August", "September", "October",
                                                       "November", "December"};
 
+    private static final boolean restrictCardFlipsToCurrentDate = true;
+
     final int horizontalBorderCalendarMargin = 20;
     final int verticalBorderCalendarMargin = 20;
-    final int marginBetweenAdjacentCalenderCells = 10;
-    final int halfMarginBetweenAdjacentCalenderCells = marginBetweenAdjacentCalenderCells / 2;
+    final int verticalMarginBetweenAdjacentCalendarCells = 10;
+    final int horizontalMarginBetweenAdjacentCalendarCells = 10;
+    final int halfVerticalMarginBetweenAdjacentCalenderCells = verticalMarginBetweenAdjacentCalendarCells / 2;
+    final int halfHorizontalMarginBetweenAdjacentCalenderCells = horizontalMarginBetweenAdjacentCalendarCells / 2;
     MonthlyTarotHistory thisMonthsTarotHistory;
     public static int daysInMonth(int month, int year)
     {
@@ -153,25 +157,25 @@ public class CalendarActivity extends AnimatedActivity {
                     calendarSquareLayoutParams.leftMargin = horizontalBorderCalendarMargin;
                 }
                 else {
-                    calendarSquareLayoutParams.leftMargin = halfMarginBetweenAdjacentCalenderCells;
+                    calendarSquareLayoutParams.leftMargin = halfHorizontalMarginBetweenAdjacentCalenderCells;
                 }
                 if(col == DAYS_IN_WEEK - 1) {
                     calendarSquareLayoutParams.rightMargin = horizontalBorderCalendarMargin;
                 }
                 else {
-                    calendarSquareLayoutParams.rightMargin = halfMarginBetweenAdjacentCalenderCells;
+                    calendarSquareLayoutParams.rightMargin = halfHorizontalMarginBetweenAdjacentCalenderCells;
                 }
                 if(row == 0) {
                     calendarSquareLayoutParams.topMargin = verticalBorderCalendarMargin;
                 }
                 else {
-                    calendarSquareLayoutParams.topMargin = halfMarginBetweenAdjacentCalenderCells;
+                    calendarSquareLayoutParams.topMargin = halfVerticalMarginBetweenAdjacentCalenderCells;
                 }
                 if(row == numRows - 1) {
                     calendarSquareLayoutParams.bottomMargin = verticalBorderCalendarMargin;
                 }
                 else {
-                    calendarSquareLayoutParams.bottomMargin = halfMarginBetweenAdjacentCalenderCells;
+                    calendarSquareLayoutParams.bottomMargin = halfVerticalMarginBetweenAdjacentCalenderCells;
                 }
                 calendarSquare.setLayoutParams(calendarSquareLayoutParams);
                 calendarRow.addView(calendarSquare);
@@ -193,6 +197,11 @@ public class CalendarActivity extends AnimatedActivity {
         Integer selectedDay = calendarSquare.getDayOfMonth();
         if(selectedDay == null)
             return;
+
+        Date today = Calendar.getInstance().getTime();
+        if(today.getDate() != selectedDay && CalendarActivity.restrictCardFlipsToCurrentDate)
+            return;
+
         // Toast.makeText(this, "dayOfMonth = " + calendarSquare.getDayOfMonth(), Toast.LENGTH_SHORT).show();
         if(!thisMonthsTarotHistory.userFlippedCardOnDay(selectedDay))
         {

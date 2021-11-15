@@ -49,7 +49,7 @@
         android:id="@+id/monthNameTextView"
         android:layout_width="223dp"
         android:layout_height="59dp"
-        android:fontFamily="@font/alfa_slab_one"
+        android:fontFamily="sans-serif-medium"
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/monthname"
         android:textAlignment="center"
