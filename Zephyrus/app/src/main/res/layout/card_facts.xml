@@ -16,22 +16,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/navigation" />
-
-    <ImageView
-        android:id="@+id/tarotCardImageView"
-        android:layout_width="196dp"
-        android:layout_height="267dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="170dp"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.19"
-        app:srcCompat="@drawable/placeholder_back_of_card" />
-
+        app:menu="@menu/navigation"
+        />
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="407dp"
@@ -85,19 +71,6 @@
         app:layout_constraintStart_toEndOf="@+id/button1"
         app:layout_constraintTop_toBottomOf="@+id/buttonDescription"
         app:layout_constraintVertical_bias="0.979" />
-
-    <Button
-        android:id="@+id/buttonDescription"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Description"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tarotCardImageView" />
-
     <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
@@ -112,5 +85,54 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.984" />
 
+    <Button
+        android:id="@+id/buttonDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/easyFlipView"
+        app:layout_constraintBottom_toTopOf="@+id/button2"/>
+
+    <com.wajahatkarim3.easyflipview.EasyFlipView
+        android:id="@+id/easyFlipView"
+        android:layout_width="wrap_content"
+        android:layout_height="284dp"
+        app:autoFlipBack="false"
+        app:autoFlipBackTime="1000"
+        app:flipDuration="400"
+        app:flipEnabled="true"
+        app:flipFrom="front"
+        app:flipOnTouch="true"
+        app:flipType="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/buttonDescription"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteY="-13dp">
+
+
+        <ImageView
+            android:id="@+id/tarotCard_Back"
+            android:layout_width="196dp"
+            android:layout_height="267dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="170dp"
+            android:gravity="center"
+            app:srcCompat="@drawable/tarot_back_idea_1" />
+
+        <ImageView
+            android:id="@+id/tarotCard_front"
+            android:layout_width="196dp"
+            android:layout_height="267dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="170dp"
+            android:gravity="center"
+            app:srcCompat="@drawable/tarot_back_idea_1" />
+
+    </com.wajahatkarim3.easyflipview.EasyFlipView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
