@@ -185,7 +185,8 @@ public class CalendarActivity extends AnimatedActivity {
 
     }
 
-    private Drawable getDrawableImage() throws IOException {
+    private Drawable getDrawableImage() throws IOException
+    {
         Drawable image;
         InputStream file = getAssets().open("Tarot_Back_Idea_1.png");
         image = Drawable.createFromStream(file, null);
@@ -199,8 +200,11 @@ public class CalendarActivity extends AnimatedActivity {
             return;
 
         Date today = Calendar.getInstance().getTime();
-        if(today.getDate() != selectedDay && CalendarActivity.restrictCardFlipsToCurrentDate)
-            return;
+        if(CalendarActivity.restrictCardFlipsToCurrentDate)
+        {
+            if(!thisMonthsTarotHistory.userFlippedCardOnDay(selectedDay) && today.getDate() != selectedDay)
+                return;
+        }
 
         // Toast.makeText(this, "dayOfMonth = " + calendarSquare.getDayOfMonth(), Toast.LENGTH_SHORT).show();
         if(!thisMonthsTarotHistory.userFlippedCardOnDay(selectedDay))

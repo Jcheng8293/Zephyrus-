@@ -7,6 +7,7 @@ import android.view.Gravity;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -23,7 +24,6 @@ public class CardFacts extends AnimatedActivity {
         setContentView(R.layout.card_facts);
 
         int tarotCardID = (int) getIntent().getSerializableExtra("TarotCardID");
-        // TarotCard.State state = (TarotCard.State) getIntent().getSerializableExtra("State");
         TarotCard card = null;
         try {
             card = TarotCard.readNewTarotCardByID(getApplicationContext(), tarotCardID);
