@@ -3,6 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/chris/AndroidStudioProjects/Zephyrus-Test/Zephyrus/app/src/main/res/layout/activity_calendar.xml" value="0.33" />
+        <entry key="..\:/Users/chris/AndroidStudioProjects/Zephyrus-Test/Zephyrus/app/src/main/res/layout/activity_card_list.xml" value="0.20601851851851852" />
+        <entry key="..\:/Users/chris/AndroidStudioProjects/Zephyrus-Test/Zephyrus/app/src/main/res/layout/activity_journal.xml" value="0.20601851851851852" />
+        <entry key="..\:/Users/chris/AndroidStudioProjects/Zephyrus-Test/Zephyrus/app/src/main/res/layout/activity_spreads.xml" value="0.20601851851851852" />
+        <entry key="..\:/Users/chris/AndroidStudioProjects/Zephyrus-Test/Zephyrus/app/src/main/res/layout/activity_three_card_spread.xml" value="0.20601851851851852" />
+        <entry key="..\:/Users/chris/AndroidStudioProjects/Zephyrus-Test/Zephyrus/app/src/main/res/layout/card_facts.xml" value="0.19186046511627908" />
+        <entry key="..\:/Users/chris/AndroidStudioProjects/Zephyrus-Test/Zephyrus/app/src/main/res/layout/front_animation.xml" value="0.15555555555555556" />
         <entry key="..\:/Users/justi/Desktop/CMSC Stuff/CMSC 355 --/Zephyrus-/Zephyrus/app/src/main/res/drawable/bg_rounded.xml" value="0.22037037037037038" />
         <entry key="..\:/Users/justi/Desktop/CMSC Stuff/CMSC 355 --/Zephyrus-/Zephyrus/app/src/main/res/drawable/ic_baseline_add_a_photo_24.xml" value="0.1" />
         <entry key="..\:/Users/justi/Desktop/CMSC Stuff/CMSC 355 --/Zephyrus-/Zephyrus/app/src/main/res/drawable/temp_splash.xml" value="0.22037037037037038" />
