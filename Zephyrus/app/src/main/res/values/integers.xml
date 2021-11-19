@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <integer name="changeActivityAnimationDurationMilliseconds">750</integer>
+    <integer name="changeActivityAnimationDurationMilliseconds">725</integer>
 </resources>
