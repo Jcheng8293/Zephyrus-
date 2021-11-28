@@ -37,15 +37,11 @@ public class CardFacts extends AnimatedActivity {
         ImageView tarotCardImageView = findViewById(R.id.tarotCardImageView);
 
         String[] captions = card.getCaptions();
-        String[] description = card.getDescription();
+        String description = card.getDescription();
         topMeaningTextView.setText(captions[0]);
         centerMeaningTextView.setText(captions[1]);
         bottomMeaningTextView.setText(captions[2]);
-        if (TarotCard.State.NORMAL == card.getState()) {
-            descriptionTextView.setText(description[0]);
-        } else {
-            descriptionTextView.setText(description[1]);
-        }
+        descriptionTextView.setText(description);
         tarotCardImageView.setImageDrawable(card.getImage());
 
         /*

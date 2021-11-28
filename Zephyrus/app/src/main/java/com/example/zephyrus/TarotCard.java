@@ -7,7 +7,10 @@ import android.graphics.Matrix;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.widget.Toast;
+import java.util.regex.*;
 
+
+import java.io.File;
 import java.io.InputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -20,7 +23,7 @@ public class TarotCard implements Serializable
     private final String name;
     private final Drawable tarotCardImage;
     private final String[] captions; // the things that go in the bubbles below the card, idk what they're called
-    private final String[] description;
+    private final String description;
     private State state;
     public static final int NUM_TAROT_CARDS = 156;
 
@@ -51,7 +54,7 @@ public class TarotCard implements Serializable
         State cardState = cardID % 2 == 0 ? State.NORMAL : State.REVERSED;
         if(cardState == State.REVERSED)
         {
-            cardName += "Reverse " + cardName;
+            cardName += cardName + " Reversed";
             for(int j = 0; j < 3; j++)
                 textScanner.nextLine();
         }
@@ -59,22 +62,38 @@ public class TarotCard implements Serializable
         for(int k = 0; k < 3; k++)
             captions[k] = textScanner.nextLine();
 
+        InputStream description_stream = null;
+        try {
+            description_stream = context.getAssets().open("tarot_descriptions.txt");
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+            System.exit(-1);
+        }
+        Scanner descriptionScanner = new Scanner(description_stream);
+        for(int i = 0; i < cardID; i++)
+        {
+            descriptionScanner.nextLine();
+            descriptionScanner.nextLine();
+        }
+        descriptionScanner.nextLine();
+        String description = descriptionScanner.nextLine();
+
+
         String imageFilename = "SampleTarotCards/card" + (cardID/2 + 1) + ".png";
-        return new TarotCard(cardID, context, imageFilename, cardName, captions, new String[]{"There are no descriptions for now."}, cardState);
+        return new TarotCard(cardID, context, imageFilename, cardName, captions, description, cardState);
     }
 
-    private TarotCard(int cardID, Context context, String imageFilePath, String name, String[] captions, String[] description, State state)
+    private TarotCard(int cardID, Context context, String imageFilePath, String name, String[] captions, String description, State state)
     {
         this(cardID, context, getDrawableFromFilePath(context, imageFilePath), name, captions, description, state);
     }
 
-    private TarotCard(int cardID, Context context, Drawable image, String name, String[] captions, String[] description, State state)
+    private TarotCard(int cardID, Context context, Drawable image, String name, String[] captions, String description, State state)
     {
         if(description == null)
             throw new IllegalArgumentException("description cannot be null");
-
-        if(description.length == 1)
-            description = new String[]{description[0], description[0]}; // just now for debugging, copy normal and reverse descriptions
 
         if(captions == null)
             throw new IllegalArgumentException("captions cannot be null");
@@ -129,7 +148,7 @@ public class TarotCard implements Serializable
 
     public Drawable getImage() { return this.tarotCardImage; }
     public String[] getCaptions() { return this.captions; }
-    public String[] getDescription() { return this.description; }
+    public String getDescription() { return this.description; }
     public State getState() { return this.state; }
     public int getCardID() { return this.cardID; }
     public String getCardName() { return this.name; }
