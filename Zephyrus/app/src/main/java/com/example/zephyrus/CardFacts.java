@@ -1,15 +1,10 @@
 package com.example.zephyrus;
 
-import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
-import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -26,7 +21,7 @@ public class CardFacts extends AnimatedActivity {
         int tarotCardID = (int) getIntent().getSerializableExtra("TarotCardID");
         TarotCard card = null;
         try {
-            card = TarotCard.readNewTarotCardByID(getApplicationContext(), tarotCardID);
+            card = TarotCard.readNewTarotCardById(getApplicationContext(), tarotCardID);
         }
         catch (Exception e){}
 
