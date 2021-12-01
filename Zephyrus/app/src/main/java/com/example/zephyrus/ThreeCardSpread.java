@@ -6,8 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ThreeCardSpread extends AppCompatActivity {
 
-    int[] deck = (int[]) getIntent().getSerializableExtra("deck");
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

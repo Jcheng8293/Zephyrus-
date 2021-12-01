@@ -6,14 +6,9 @@ import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.widget.Toast;
-import java.util.regex.*;
 
-
-import java.io.File;
 import java.io.InputStream;
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class TarotCard implements Serializable
@@ -169,37 +164,6 @@ public class TarotCard implements Serializable
             return this.cardID == ((TarotCard)o).cardID;
         }
         return false;
-    }
-
-    public static ArrayList<TarotCard> shuffle(ArrayList<TarotCard> deck) {
-        ArrayList<TarotCard> temp = new ArrayList<>();
-
-        for (int i = 39; i < deck.size(); ) {
-            temp.add(deck.remove(i));
-        }
-
-        int random = (int) Math.round(Math.random());
-        if (random == 0) { reverse(deck); }
-        else { reverse(temp); }
-
-        ArrayList<TarotCard> newDeck = new ArrayList<>();
-
-        while (deck.size() != 0 && temp.size() != 0) {
-            newDeck.add(deck.remove(0));
-            newDeck.add(temp.remove(0));
-        }
-        return newDeck;
-    }
-
-    public static void reverse(ArrayList<TarotCard> deck)
-    {
-        for (int i = 0; i < deck.size(); i++) {
-            TarotCard card = deck.get(i);
-            if(card.state == State.NORMAL)
-                card.state = State.REVERSED;
-            else
-                card.state = State.NORMAL;
-        }
     }
 
     private static Bitmap drawableToBitmap (Drawable drawable) {
