@@ -54,4 +54,11 @@ public class SpreadsActivity extends AnimatedActivity {
             Intent intent = new Intent(SpreadsActivity.this, ThreeCardSpread.class);
             startActivity(intent);
     }
+    /*****
+     * Goes to Single Card Spreads Activity
+     ****/
+    public void toSingleCard(View v) {
+        Intent intent = new Intent(SpreadsActivity.this, SingleCard.class);
+        startActivity(intent);
+    }
 }

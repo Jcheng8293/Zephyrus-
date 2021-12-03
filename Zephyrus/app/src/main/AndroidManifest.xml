@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.zephyrus">
+
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
@@ -12,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Zephyrus">
         <activity
+            android:name=".SingleCard"
+            android:exported="true" />
+        <activity
             android:name=".CalendarActivity"
             android:exported="true" />
         <activity
@@ -22,10 +26,10 @@
             android:exported="true" />
         <activity
             android:name=".SpreadsActivity"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".CardFacts"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".ThreeCardSpread"
             android:exported="true" />

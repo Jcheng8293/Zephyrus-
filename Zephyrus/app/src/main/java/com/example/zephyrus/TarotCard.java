@@ -58,7 +58,7 @@ public class TarotCard implements Serializable {
         String cardName = textScanner.nextLine();
         State cardState = cardId % 2 == 0 ? State.NORMAL : State.REVERSED;
         if (cardState == State.REVERSED) {
-            cardName += cardName + " Reversed";
+            cardName = cardName + " Reversed";
             for (int j = 0; j < 3; j++) textScanner.nextLine();
         }
         String[] captions = new String[3];
