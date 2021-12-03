@@ -1,15 +1,10 @@
 package com.example.zephyrus;
 
-import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
-import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -34,7 +29,7 @@ public class CardFacts extends AnimatedActivity {
         TextView centerMeaningTextView = findViewById(R.id.centerMeaningTextView);
         TextView bottomMeaningTextView = findViewById(R.id.bottomMeaningTextView);
         TextView descriptionTextView = findViewById(R.id.descriptionTextView);
-        ImageView tarotCardImageView = findViewById(R.id.tarotCardImageView);
+        ImageView tarotCardImageView = findViewById(R.id.cardImageView_);
 
         String[] captions = card.getCaptions();
         String description = card.getDescription();

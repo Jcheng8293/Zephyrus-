@@ -32,7 +32,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/cardImageView"
+        android:id="@+id/cardImageView_"
         android:layout_width="120dp"
         android:layout_height="180dp"
         android:contentDescription="@string/this_is_the_imageview_for_the_currently_selected_day_s_tarot_card"
@@ -61,7 +61,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardImageView" />
+        app:layout_constraintTop_toBottomOf="@+id/cardImageView_" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/calender_navigation"

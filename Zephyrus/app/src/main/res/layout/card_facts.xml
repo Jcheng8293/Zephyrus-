@@ -37,7 +37,7 @@
         app:layout_constraintBottom_toTopOf="@+id/centerMeaningTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/easyFlipView" />
+        app:layout_constraintTop_toBottomOf="@+id/card_" />
 
     <TextView
         android:id="@+id/centerMeaningTextView"
@@ -108,7 +108,7 @@
     </ScrollView>
 
     <com.wajahatkarim3.easyflipview.EasyFlipView
-        android:id="@+id/easyFlipView"
+        android:id="@+id/card_"
         android:layout_width="wrap_content"
         android:layout_height="284dp"
         android:layout_marginBottom="15dp"
@@ -126,7 +126,7 @@
 
 
         <ImageView
-            android:id="@+id/tarotCardImageView"
+            android:id="@+id/cardImageView_"
             android:layout_width="196dp"
             android:layout_height="267dp"
             android:layout_marginTop="16dp"
@@ -135,7 +135,7 @@
             app:srcCompat="@drawable/tarot_back_idea_1" />
 
         <ImageView
-            android:id="@+id/tarotCard_front"
+            android:id="@+id/card_front_"
             android:layout_width="196dp"
             android:layout_height="267dp"
             android:layout_marginTop="16dp"

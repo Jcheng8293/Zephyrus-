@@ -6,4 +6,152 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/ActivityBackgroundColor"
-    tools:context=".ThreeCardSpread" />
+    tools:context=".ThreeCardSpread" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.gridlayout.widget.GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            android:paddingLeft="8dp"
+            app:columnCount="3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:rowCount="3">
+
+            <com.wajahatkarim3.easyflipview.EasyFlipView
+                android:id="@+id/card1"
+                android:layout_width="160dp"
+                android:layout_height="256dp"
+                android:layout_marginBottom="15dp"
+                app:autoFlipBack="false"
+                app:autoFlipBackTime="1000"
+                app:flipDuration="400"
+                app:flipEnabled="true"
+                app:flipFrom="front"
+                app:flipOnTouch="true"
+                app:flipType="horizontal"
+                app:layout_constraintBottom_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <ImageView
+                    android:id="@+id/cardImageView1"
+                    android:layout_width="160dp"
+                    android:layout_height="240dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="170dp"
+                    android:gravity="center"
+                    app:srcCompat="@drawable/tarot_back_idea_1" />
+
+                <ImageView
+                    android:id="@+id/card_front1"
+                    android:layout_width="160dp"
+                    android:layout_height="240dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="170dp"
+                    android:gravity="center"
+                    app:srcCompat="@drawable/tarot_back_idea_1" />
+
+            </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+            <com.wajahatkarim3.easyflipview.EasyFlipView
+                android:id="@+id/card3"
+                android:layout_width="160dp"
+                android:layout_height="256dp"
+                android:layout_marginBottom="15dp"
+                app:autoFlipBack="false"
+                app:autoFlipBackTime="1000"
+                app:flipDuration="400"
+                app:flipEnabled="true"
+                app:flipFrom="front"
+                app:flipOnTouch="true"
+                app:flipType="horizontal"
+                app:layout_column="0"
+                app:layout_constraintBottom_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_row="2">
+
+
+                <ImageView
+                    android:id="@+id/cardImageView3"
+                    android:layout_width="160dp"
+                    android:layout_height="240dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="170dp"
+                    android:gravity="center"
+                    app:srcCompat="@drawable/tarot_back_idea_1" />
+
+                <ImageView
+                    android:id="@+id/card_front3"
+                    android:layout_width="160dp"
+                    android:layout_height="240dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="170dp"
+                    android:gravity="center"
+                    app:srcCompat="@drawable/tarot_back_idea_1" />
+
+            </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+            <com.wajahatkarim3.easyflipview.EasyFlipView
+                android:id="@+id/card2"
+                android:layout_width="160dp"
+                android:layout_height="256dp"
+                android:layout_marginBottom="15dp"
+                app:autoFlipBack="false"
+                app:autoFlipBackTime="1000"
+                app:flipDuration="400"
+                app:flipEnabled="true"
+                app:flipFrom="front"
+                app:flipOnTouch="true"
+                app:flipType="horizontal"
+                app:layout_column="0"
+                app:layout_constraintBottom_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_row="1">
+
+
+                <ImageView
+                    android:id="@+id/cardImageView2"
+                    android:layout_width="160dp"
+                    android:layout_height="240dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="170dp"
+                    android:gravity="center"
+                    app:srcCompat="@drawable/tarot_back_idea_1" />
+
+                <ImageView
+                    android:id="@+id/card_front2"
+                    android:layout_width="160dp"
+                    android:layout_height="240dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="170dp"
+                    android:gravity="center"
+                    app:srcCompat="@drawable/tarot_back_idea_1" />
+
+            </com.wajahatkarim3.easyflipview.EasyFlipView>
+        </androidx.gridlayout.widget.GridLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
