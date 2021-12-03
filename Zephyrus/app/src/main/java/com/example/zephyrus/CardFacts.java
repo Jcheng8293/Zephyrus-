@@ -21,7 +21,7 @@ public class CardFacts extends AnimatedActivity {
         int tarotCardID = (int) getIntent().getSerializableExtra("TarotCardID");
         TarotCard card = null;
         try {
-            card = TarotCard.readNewTarotCardByID(getApplicationContext(), tarotCardID);
+            card = TarotCard.readNewTarotCardById(getApplicationContext(), tarotCardID);
         }
         catch (Exception e){}
 

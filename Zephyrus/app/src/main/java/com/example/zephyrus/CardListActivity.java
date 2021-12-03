@@ -2,18 +2,11 @@ package com.example.zephyrus;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.GridLayout;
-import android.widget.LinearLayout;
-import android.widget.RadioButton;
-import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -129,7 +122,7 @@ public class CardListActivity extends AnimatedActivity {
         Context context = getApplication().getApplicationContext();
         TarotCard[] cards = new TarotCard[TarotCard.NUM_TAROT_CARDS];
         for (int cardID = 0; cardID < TarotCard.NUM_TAROT_CARDS; cardID++)
-            cards[cardID] = TarotCard.readNewTarotCardByID(context, cardID);
+            cards[cardID] = TarotCard.readNewTarotCardById(context, cardID);
         return cards;
     }
     public void cardButtonIsClicked(View v)

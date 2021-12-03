@@ -1,19 +1,12 @@
 package com.example.zephyrus;
 
-import android.app.ActivityOptions;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.os.Bundle;
-import android.transition.Slide;
 import android.view.Gravity;
-import android.view.animation.AccelerateDecelerateInterpolator;
-import android.widget.SeekBar;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -131,7 +124,7 @@ public class CalendarActivity extends AnimatedActivity {
                     {
                         TarotCard daysCard = null;
                         try {
-                            daysCard = TarotCard.readNewTarotCardByID(getApplicationContext(),
+                            daysCard = TarotCard.readNewTarotCardById(getApplicationContext(),
                                     thisMonthsTarotHistory.getTarotCardIDForDay(calendarSquaresDayOfMonth));
                         }
                         catch(Exception e) {}
