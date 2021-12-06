@@ -1,5 +1,8 @@
 package com.example.zephyrus;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class TarotCardReaderConfig {
     public enum TarotCardTypes {ALL, NORMAL, REVERSED, MAJOR_ARCANA, SWORDS, WANDS, CUPS, PENTACLES};
 
@@ -34,6 +37,19 @@ public class TarotCardReaderConfig {
     private static final int pentaclesCardIdStart = 128;
     private static final int pentaclesCardIdEnd = 155;
     private static final int pentaclesCardIdStride = 1;
+
+
+    public static final Map<TarotCardTypes, String> cardTypeToName = new HashMap<>();
+    static {
+        cardTypeToName.put(TarotCardTypes.ALL, "All");
+        cardTypeToName.put(TarotCardTypes.NORMAL, "Normal");
+        cardTypeToName.put(TarotCardTypes.REVERSED, "Reversed");
+        cardTypeToName.put(TarotCardTypes.MAJOR_ARCANA, "Major Arcana");
+        cardTypeToName.put(TarotCardTypes.SWORDS, "Swords");
+        cardTypeToName.put(TarotCardTypes.WANDS, "Wands");
+        cardTypeToName.put(TarotCardTypes.CUPS, "Cups");
+        cardTypeToName.put(TarotCardTypes.PENTACLES, "Pentacles");
+    }
 
 
 
@@ -85,6 +101,11 @@ public class TarotCardReaderConfig {
     {
         double width = endID - startID + 1;
         return (int) Math.ceil(width / stride);
+    }
+
+    public static String getNameOfCardType(TarotCardTypes cardType)
+    {
+        return cardTypeToName.get(cardType);
     }
 
 }
