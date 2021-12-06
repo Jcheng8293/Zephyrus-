@@ -79,7 +79,7 @@ public class TarotCard implements Serializable {
         descriptionScanner.nextLine();
         String description = descriptionScanner.nextLine();
 
-        String imageFilename = "SampleTarotCards/card" + (cardId / 2 + 1) + ".png";
+        String imageFilename = "SampleTarotCards/" + (cardId / 2 + 1) + ".jpg";
         return new TarotCard(
                 cardId, context, imageFilename, cardName, captions, description, cardState);
     }
@@ -123,7 +123,7 @@ public class TarotCard implements Serializable {
         this.captions = captions;
         this.description = description;
 
-        if (state == State.REVERSED) this.tarotCardImage = rotateCardImage(context, image);
+        if (this.cardId % 2 == 0) this.tarotCardImage = rotateCardImage(context, image);
         else this.tarotCardImage = image;
     }
 
