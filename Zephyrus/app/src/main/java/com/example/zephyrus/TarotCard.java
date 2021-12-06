@@ -29,6 +29,7 @@ public class TarotCard implements Serializable {
   private State state;
   public static final int NUM_TAROT_CARDS = 156;
 
+
   /**
    * Returns a TarotCard object with a given ID. 'context' should be the result of the call
    * getApplicationContext(). *
@@ -248,5 +249,21 @@ public class TarotCard implements Serializable {
     drawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
     drawable.draw(canvas);
     return bitmap;
+  }
+
+  public static TarotCard[] getCardsByType(Context context, TarotCardReaderConfig.TarotCardTypes cardType)
+  {
+    TarotCardReaderConfig readerConfig = TarotCardReaderConfig.getConfigForType(cardType);
+    int numCardsOfType = readerConfig.getNumberOfCards();
+    TarotCard[] cards = new TarotCard[numCardsOfType];
+    int nextIndex = 0;
+
+    for(int currentCardID = readerConfig.getStartID();
+        currentCardID <= readerConfig.getEndID();
+        currentCardID += readerConfig.getStride())
+    {
+      cards[nextIndex++] = TarotCard.readNewTarotCardById(context, currentCardID);
+    }
+    return cards;
   }
 }
