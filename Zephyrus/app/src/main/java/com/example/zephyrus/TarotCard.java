@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import java.io.InputStream;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /** The TarotCard class contains all the required information about an individual tarot card. * */
@@ -41,16 +42,6 @@ public class TarotCard implements Serializable {
             throw new IllegalArgumentException(
                     "cardId must be [0, " + NUM_TAROT_CARDS + "), but was given " + cardId);
         }
-
-  /**
-   * Returns a TarotCard object with a given ID. 'context' should be the result of the call
-   * getApplicationContext(). *
-   */
-  public static TarotCard readNewTarotCardById(Context context, int cardId) {
-    if (cardId < 0 || cardId >= NUM_TAROT_CARDS) {
-      throw new IllegalArgumentException(
-          "cardId must be [0, " + NUM_TAROT_CARDS + "), but was given " + cardId);
-    }
 
         InputStream inStream = null;
         try {
@@ -276,28 +267,6 @@ public class TarotCard implements Serializable {
     }
     return cards;
   }
-    private static Bitmap drawableToBitmap(Drawable drawable) {
-        Bitmap bitmap;
-        if (drawable instanceof BitmapDrawable) {
-            BitmapDrawable bitmapDrawable = (BitmapDrawable) drawable;
-            if (bitmapDrawable.getBitmap() != null) {
-                return bitmapDrawable.getBitmap();
-            }
-        }
-        if (drawable.getIntrinsicWidth() <= 0 || drawable.getIntrinsicHeight() <= 0) {
-            bitmap =
-                    Bitmap.createBitmap(
-                            1, 1, Bitmap.Config.ARGB_8888); // Single color bitmap will be created of 1x1 pixel
-        } else {
-            bitmap =
-                    Bitmap.createBitmap(
-                            drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
 
-        }
-        Canvas canvas = new Canvas(bitmap);
-        drawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
-        drawable.draw(canvas);
-        return bitmap;
-    }
 }
 
