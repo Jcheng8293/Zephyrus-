@@ -126,7 +126,8 @@ public class TarotCard implements Serializable {
         this.captions = captions;
         this.description = description;
 
-        if (this.cardId % 2 == 0) this.tarotCardImage = rotateCardImage(context, image);
+        if (this.state == State.REVERSED)
+            this.tarotCardImage = rotateCardImage(context, image);
         else this.tarotCardImage = image;
     }
 
