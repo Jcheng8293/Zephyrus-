@@ -29,7 +29,7 @@ jobs:
     - name: cd into directory with gradle
       run: cd /home/runner/work/Zephyrus-/Zephyrus-/Zephyrus/
     - name: Grant execute permission for gradlew
-      run: chmod +x /home/runner/work/Zephyrus-/Zephyrus-/Zephyrus/gradlew
+      run: chmod +x gradlew
     - name: Build with Gradle
-      run: /home/runner/work/Zephyrus-/Zephyrus-/Zephyrus/gradlew build
+      run: ./gradlew build
 
