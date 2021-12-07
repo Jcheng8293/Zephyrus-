@@ -26,10 +26,8 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
     
-    - name: Look for gradlew
-      run: find / -type f -name "gradlew"
     - name: Grant execute permission for gradlew
-      run: chmod +x gradlew
+      run: chmod +x /home/runner/work/Zephyrus-/Zephyrus-/Zephyrus/gradlew
     - name: Build with Gradle
-      run: gradlew build
+      run: /home/runner/work/Zephyrus-/Zephyrus-/Zephyrus/gradlew build
 
