@@ -9,9 +9,9 @@ name: Java CI with Gradle
 
 on:
   push:
-    branches: [ CardListFilter ]
+    branches: [ main ]
   pull_request:
-    branches: [ CardListFilter ]
+    branches: [ main ]
 
 jobs:
   build:
