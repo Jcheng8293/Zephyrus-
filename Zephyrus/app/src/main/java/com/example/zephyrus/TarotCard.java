@@ -6,6 +6,8 @@ import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.widget.Toast;
+
 import java.io.InputStream;
 import java.io.Serializable;
 import java.util.Scanner;
@@ -39,6 +41,16 @@ public class TarotCard implements Serializable {
             throw new IllegalArgumentException(
                     "cardId must be [0, " + NUM_TAROT_CARDS + "), but was given " + cardId);
         }
+
+  /**
+   * Returns a TarotCard object with a given ID. 'context' should be the result of the call
+   * getApplicationContext(). *
+   */
+  public static TarotCard readNewTarotCardById(Context context, int cardId) {
+    if (cardId < 0 || cardId >= NUM_TAROT_CARDS) {
+      throw new IllegalArgumentException(
+          "cardId must be [0, " + NUM_TAROT_CARDS + "), but was given " + cardId);
+    }
 
         InputStream inStream = null;
         try {
@@ -195,6 +207,75 @@ public class TarotCard implements Serializable {
         return false;
     }
 
+  public static ArrayList<TarotCard> shuffle(ArrayList<TarotCard> deck) {
+    ArrayList<TarotCard> temp = new ArrayList<>();
+
+    for (int i = 39; i < deck.size(); ) {
+      temp.add(deck.remove(i));
+    }
+
+    int random = (int) Math.round(Math.random());
+    if (random == 0) {
+      reverse(deck);
+    } else {
+      reverse(temp);
+    }
+
+    ArrayList<TarotCard> newDeck = new ArrayList<>();
+
+    while (deck.size() != 0 && temp.size() != 0) {
+      newDeck.add(deck.remove(0));
+      newDeck.add(temp.remove(0));
+    }
+    return newDeck;
+  }
+
+  public static void reverse(ArrayList<TarotCard> deck) {
+    for (int i = 0; i < deck.size(); i++) {
+      TarotCard card = deck.get(i);
+      if (card.state == State.NORMAL) card.state = State.REVERSED;
+      else card.state = State.NORMAL;
+    }
+  }
+
+  private static Bitmap drawableToBitmap(Drawable drawable) {
+    Bitmap bitmap;
+    if (drawable instanceof BitmapDrawable) {
+      BitmapDrawable bitmapDrawable = (BitmapDrawable) drawable;
+      if (bitmapDrawable.getBitmap() != null) {
+        return bitmapDrawable.getBitmap();
+      }
+    }
+    if (drawable.getIntrinsicWidth() <= 0 || drawable.getIntrinsicHeight() <= 0) {
+      bitmap =
+          Bitmap.createBitmap(
+              1, 1, Bitmap.Config.ARGB_8888); // Single color bitmap will be created of 1x1 pixel
+    } else {
+      bitmap =
+          Bitmap.createBitmap(
+              drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
+    }
+    Canvas canvas = new Canvas(bitmap);
+    drawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
+    drawable.draw(canvas);
+    return bitmap;
+  }
+
+  public static TarotCard[] getCardsByType(Context context, TarotCardReaderConfig.TarotCardTypes cardType)
+  {
+    TarotCardReaderConfig readerConfig = TarotCardReaderConfig.getConfigForType(cardType);
+    int numCardsOfType = readerConfig.getNumberOfCards();
+    TarotCard[] cards = new TarotCard[numCardsOfType];
+    int nextIndex = 0;
+
+    for(int currentCardID = readerConfig.getStartID();
+        currentCardID <= readerConfig.getEndID();
+        currentCardID += readerConfig.getStride())
+    {
+      cards[nextIndex++] = TarotCard.readNewTarotCardById(context, currentCardID);
+    }
+    return cards;
+  }
     private static Bitmap drawableToBitmap(Drawable drawable) {
         Bitmap bitmap;
         if (drawable instanceof BitmapDrawable) {

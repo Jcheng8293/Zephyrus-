@@ -7,16 +7,30 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridLayout;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class CardListActivity extends AnimatedActivity {
 
-    private TarotCard.State displayCardsInState = TarotCard.State.NORMAL;
     private TarotCard[] tarotCards;
+
+    private int displayCardTypeIndex = 0;
+    private static final TarotCardReaderConfig.TarotCardTypes[] displayOrder =
+            {TarotCardReaderConfig.TarotCardTypes.NORMAL,
+                    TarotCardReaderConfig.TarotCardTypes.REVERSED,
+                    TarotCardReaderConfig.TarotCardTypes.MAJOR_ARCANA,
+                    TarotCardReaderConfig.TarotCardTypes.WANDS,
+                    TarotCardReaderConfig.TarotCardTypes.CUPS,
+                    TarotCardReaderConfig.TarotCardTypes.SWORDS,
+                    TarotCardReaderConfig.TarotCardTypes.PENTACLES};
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -55,21 +69,40 @@ public class CardListActivity extends AnimatedActivity {
         /***
          * Dynamically add images
          ***/
-        this.tarotCards = readAllTarotCards();
-        setCardButtonsImages();
-        setReverseButtonTitle();
+
+        displayCardType();
 
         Button button = findViewById(R.id.reverseMe);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                CardListActivity.this.displayCardsInState = TarotCard.flipState(CardListActivity.this.displayCardsInState);
-                setCardButtonsImages();
-                setReverseButtonTitle();
+                displayCardTypeIndex = (displayCardTypeIndex + 1) % displayOrder.length;
+                displayCardType();
             }
         });
     }
 
+    private void displayCardType()
+    {
+        setButtonTitle();
+        TarotCardReaderConfig.TarotCardTypes currentCardType = getCurrentCardType();
+        tarotCards = TarotCard.getCardsByType(getApplicationContext(), currentCardType);
+        setCardButtonsImages();
+    }
+
+    public TarotCardReaderConfig.TarotCardTypes getCurrentCardType()
+    {
+        return displayOrder[displayCardTypeIndex];
+    }
+
+    public void setButtonTitle()
+    {
+        Button filterButton = findViewById(R.id.reverseMe);
+        TarotCardReaderConfig.TarotCardTypes currentCardType = getCurrentCardType();
+        filterButton.setText(TarotCardReaderConfig.getNameOfCardType(currentCardType));
+    }
+
+    /*
     public void setReverseButtonTitle()
     {
         Button reverseButton = findViewById(R.id.reverseMe);
@@ -78,6 +111,7 @@ public class CardListActivity extends AnimatedActivity {
         else if(this.displayCardsInState == TarotCard.State.NORMAL)
             reverseButton.setText("NORMAL");
     }
+    */
 
     public void setCardButtonsImages()
     {
@@ -95,36 +129,30 @@ public class CardListActivity extends AnimatedActivity {
                 if(!m.find()) {
                     continue;
                 }
-                while(tarotCards[currentCardIndex].getState() != this.displayCardsInState) {
-                    currentCardIndex++;
-                    if(tarotCards[currentCardIndex] == null)
-                        System.out.println("null at index " + currentCardIndex);
-                }
-                b.setForeground(tarotCards[currentCardIndex].getImage());
+
+                if(currentCardIndex >= tarotCards.length)
+                    b.setVisibility(View.GONE);
+                else
+                    b.setForeground(tarotCards[currentCardIndex].getImage());
             }
         }
 
     }
     public int getCardIDFromViewID(int viewID)
     {
-        int currentCardIndex = 0;
-        for(int i = R.id.B00; i != viewID; i++, currentCardIndex++)
-        {
-            while(tarotCards[currentCardIndex].getState() != this.displayCardsInState)
-                currentCardIndex++;
-        }
-        while(tarotCards[currentCardIndex].getState() != this.displayCardsInState)
-            currentCardIndex++;
-        return tarotCards[currentCardIndex].getCardID();
+        int cardIndex = viewID - R.id.B00;
+        return tarotCards[cardIndex].getCardID();
     }
+    /*
     private TarotCard[] readAllTarotCards()
     {
-        Context context = getApplication().getApplicationContext();
+        Context context = getApplicationContext();
         TarotCard[] cards = new TarotCard[TarotCard.NUM_TAROT_CARDS];
         for (int cardID = 0; cardID < TarotCard.NUM_TAROT_CARDS; cardID++)
             cards[cardID] = TarotCard.readNewTarotCardById(context, cardID);
         return cards;
     }
+     */
     public void cardButtonIsClicked(View v)
     {
         int cardID = getCardIDFromViewID(v.getId());
