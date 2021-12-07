@@ -25,7 +25,9 @@ jobs:
       with:
         java-version: '11'
         distribution: 'adopt'
-    
+        
+    - name: cd into directory with gradle
+      run: cd /home/runner/work/Zephyrus-/Zephyrus-/Zephyrus/
     - name: Grant execute permission for gradlew
       run: chmod +x /home/runner/work/Zephyrus-/Zephyrus-/Zephyrus/gradlew
     - name: Build with Gradle
