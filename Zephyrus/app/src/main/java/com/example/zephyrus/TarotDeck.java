@@ -121,8 +121,8 @@ public class TarotDeck {
     // Convert String to Array
     private void stringToDeck(String content) {
         String[] temp = content.split(" ");
-        for (int i = 0; i < 78; i++) {
-            cardIDs.add((int) Integer.parseInt(temp[i].trim()));
+        for (String s : temp) {
+            cardIDs.add((int) Integer.parseInt(s.trim()));
         }
     }
 
@@ -263,13 +263,15 @@ public class TarotDeck {
 
         while (scanner.hasNextLine()) {
             temp = output;
-            output = new String[size *= 2];
+            output = new String[size+=2];
             if (temp.length != 0) {
                 for (int i = 0; i < temp.length; i++) {
                     output[i] = temp[i];
                 }
             }
-            output[index] = "  " + scanner.nextLine() + "\n  " + scanner.nextLine() + "\n  " + scanner.nextLine();
+            output[index] = "  " + scanner.nextLine() + "  \n" + scanner.nextLine();
+            index++;
+            output[index] = scanner.nextLine();
             index++;
         }
         return output;
@@ -280,4 +282,5 @@ public class TarotDeck {
         @SuppressLint("SimpleDateFormat") SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd E HH:mm:ss z");
         return sdf.format(new Date());
     }
+
 }

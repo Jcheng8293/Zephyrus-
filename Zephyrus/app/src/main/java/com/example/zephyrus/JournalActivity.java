@@ -15,7 +15,8 @@ import java.io.FileNotFoundException;
 
 public class JournalActivity extends AppCompatActivity {
 
-    
+    String[] journal = new String[0];
+    TarotDeck deck = new TarotDeck();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,24 +49,48 @@ public class JournalActivity extends AppCompatActivity {
             }
             return false;
         });
-        String[] journal = new String[0];
-        TarotDeck deck = new TarotDeck();
 
+        // Grabs past reading information
         try {
             journal = deck.readFromJournal(getApplicationContext());
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
 
+        // Grabs card names
+        String[] cardNames = new String[journal.length/2];
+        for (int i = 0; i < cardNames.length; i++) {
+            int[] cardIDs = new int[3];
+            cardNames[i] = getCardNames(journal, i);
+        }
+
         GridLayout llMain = findViewById(R.id.journalLayout);
-        for (int i = 0; i < journal.length; i++) {
+        for (int i = 0; i < journal.length/2; i++) {
+
             TextView textView = new TextView(this);
             textView.setTextSize(20);
             textView.setTextColor(Color.WHITE);
             textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
             textView.setBackgroundResource(R.drawable.bg_rounded);
-            textView.setText(journal[i]);
-            llMain.addView(textView);
+            textView.setText(journal[i*2] + "\n" + cardNames[i]);
+            llMain.addView(textView, llMain.getLayoutParams());
+
         }
+    }
+
+    private String getCardNames(String[] journal, int index) {
+        String[] temp = journal[index*2+1].split(" ");
+        int[] cardIDs = new int[temp.length];
+        for (int i = 0; i < cardIDs.length; i++) {
+            cardIDs[i] = (int) Integer.parseInt(temp[i].trim());
+        }
+        String output = TarotCard.readNewTarotCardById(getApplicationContext(), cardIDs[0]).getCardName() + "\n";
+        if (cardIDs.length > 1) {
+            output += TarotCard.readNewTarotCardById(getApplicationContext(), cardIDs[1]).getCardName() + "\n";
+        }
+        if (cardIDs.length > 2) {
+            output += TarotCard.readNewTarotCardById(getApplicationContext(), cardIDs[2]).getCardName();
+        }
+        return output;
     }
 }

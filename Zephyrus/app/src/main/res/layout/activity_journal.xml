@@ -35,21 +35,15 @@
         <androidx.gridlayout.widget.GridLayout
             android:id="@+id/journalLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="center|top"
             android:layout_margin="8dp"
             android:clipChildren="false"
             android:clipToPadding="true"
+            android:foregroundGravity="center"
             android:minHeight="80dp"
             android:padding="8dp"
-            app:columnCount="1">
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView" />
-        </androidx.gridlayout.widget.GridLayout>
+            app:columnCount="1" />
     </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
