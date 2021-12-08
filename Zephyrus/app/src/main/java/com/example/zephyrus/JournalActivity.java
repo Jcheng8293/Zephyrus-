@@ -1,13 +1,21 @@
 package com.example.zephyrus;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.gridlayout.widget.GridLayout;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.io.FileNotFoundException;
+
 public class JournalActivity extends AppCompatActivity {
+
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,5 +48,24 @@ public class JournalActivity extends AppCompatActivity {
             }
             return false;
         });
+        String[] journal = new String[0];
+        TarotDeck deck = new TarotDeck();
+
+        try {
+            journal = deck.readFromJournal(getApplicationContext());
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        GridLayout llMain = findViewById(R.id.journalLayout);
+        for (int i = 0; i < journal.length; i++) {
+            TextView textView = new TextView(this);
+            textView.setTextSize(20);
+            textView.setTextColor(Color.WHITE);
+            textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+            textView.setBackgroundResource(R.drawable.bg_rounded);
+            textView.setText(journal[i]);
+            llMain.addView(textView);
+        }
     }
 }

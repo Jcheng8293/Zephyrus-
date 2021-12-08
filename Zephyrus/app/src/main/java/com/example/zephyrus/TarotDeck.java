@@ -5,11 +5,13 @@ import android.content.Context;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Scanner;
 
 public class TarotDeck {
 
@@ -25,6 +27,8 @@ public class TarotDeck {
     TarotDeck(Context context, String filename) {
         initialize(context, filename);
     }
+
+    TarotDeck() { }
 
     // Initializes the deck
     private void initialize(Context context, String filename) {
@@ -245,6 +249,30 @@ public class TarotDeck {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    // Reads Past Readings
+    public String[] readFromJournal(Context context) throws FileNotFoundException {
+        File filePath = context.getFilesDir();
+        String[] output = new String[0];
+        String[] temp;
+        int size = 1;
+        int index = 0;
+        arbitraryFile = new File(filePath, "Readings.txt");
+        Scanner scanner = new Scanner(arbitraryFile);
+
+        while (scanner.hasNextLine()) {
+            temp = output;
+            output = new String[size *= 2];
+            if (temp.length != 0) {
+                for (int i = 0; i < temp.length; i++) {
+                    output[i] = temp[i];
+                }
+            }
+            output[index] = "  " + scanner.nextLine() + "\n  " + scanner.nextLine() + "\n  " + scanner.nextLine();
+            index++;
+        }
+        return output;
     }
 
     // Returns time in Year/Month/Day Hour:Minute:Second
