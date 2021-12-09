@@ -71,6 +71,10 @@ public class CardFacts extends AnimatedActivity {
                     Intent d = new Intent(CardFacts.this, JournalActivity.class);
                     startActivity(d, animationBundle);
                     break;
+                case R.id.settings_nav:
+                    Intent e = new Intent(CardFacts.this, SettingsActivity.class);
+                    startActivity(e, animationBundle);
+                    break;
                 default:
                     break;
             }

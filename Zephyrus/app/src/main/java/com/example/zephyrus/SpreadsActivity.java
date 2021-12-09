@@ -40,6 +40,10 @@ public class SpreadsActivity extends AnimatedActivity {
                     Intent c = new Intent(SpreadsActivity.this, JournalActivity.class);
                     startActivity(c, animationBundle);
                     break;
+                case R.id.settings_nav:
+                    Intent d = new Intent(SpreadsActivity.this, SettingsActivity.class);
+                    startActivity(d, animationBundle);
+                    break;
                 default:
                     break;
             }

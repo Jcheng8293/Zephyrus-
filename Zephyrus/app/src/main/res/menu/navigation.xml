@@ -20,5 +20,9 @@
         android:id="@+id/journal_nav"
         android:icon="@drawable/ic_journal"
         android:title="@string/journal" />
+    <item
+        android:id="@+id/settings_nav"
+        android:icon="@drawable/ic_settings"
+        android:title="@string/settings" />
 
 </menu>

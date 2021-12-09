@@ -10,18 +10,24 @@ import android.widget.Toast;
 
 import androidx.appcompat.widget.AppCompatButton;
 
+import java.util.Calendar;
+
 public class CalendarSquare extends AppCompatButton implements View.OnClickListener
 {
     private final Integer dayOfMonth;
     private static final Paint dayOfMonthTextPaint = makeDayOfMonthTextPaint();
+    private static Calendar cal = Calendar.getInstance();
     private final Drawable tarotCardImage;
     public CalendarSquare(Context context, Integer dayOfMonth, Drawable tarotCardImage)
     {
         super(context);
         this.dayOfMonth = dayOfMonth;
+        int current_day = cal.get(Calendar.DAY_OF_MONTH);
         setOnClickListener(this);
         if(dayOfMonth == null)
             this.setBackgroundColor(getResources().getColor(R.color.CalendarUnusedSquare));
+        else if (dayOfMonth == current_day)
+            this.setBackgroundColor(getResources().getColor(R.color.CalenderCurrentSquare));
         else
             this.setBackgroundColor(getResources().getColor(R.color.CalendarUsedSquare));
         this.tarotCardImage = tarotCardImage;

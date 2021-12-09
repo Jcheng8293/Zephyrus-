@@ -19,6 +19,7 @@
     <color name="CalendarUnusedSquare">#986db3</color>
     <color name="CalendarUsedSquare">#c18ce4</color>
     <color name="CalendarMonthNameForegroundColor">#b58ce4</color>
+    <color name="CalenderCurrentSquare">#FFFFFF</color>
 
     <color name="NavBarBackground">#2E2E2E</color>
     <color name="NavBarSelectedForeground">#AA88FF</color>

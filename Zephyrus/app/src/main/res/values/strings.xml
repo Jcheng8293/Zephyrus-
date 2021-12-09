@@ -6,4 +6,5 @@
     <string name="spreads">Spreads</string>
     <string name="this_is_the_imageview_for_the_currently_selected_day_s_tarot_card">This is the ImageView for the currently selected day\'s tarot card.</string>
     <string name="monthname">MonthName</string>
+    <string name="settings">Settings</string>
 </resources>

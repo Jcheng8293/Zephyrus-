@@ -44,6 +44,10 @@ public class JournalActivity extends AppCompatActivity {
                     break;
                 case R.id.journal_nav:
                     break;
+                case R.id.settings_nav:
+                    Intent d = new Intent(JournalActivity.this, SettingsActivity.class);
+                    startActivity(d);
+                    break;
                 default:
                     break;
             }

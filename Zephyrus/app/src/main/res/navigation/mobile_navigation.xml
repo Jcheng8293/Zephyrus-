@@ -23,4 +23,9 @@
         android:name="com.example.zephyrus.JournalActivity"
         android:label="activity_journal"
         tools:layout="@layout/activity_journal" />
+    <activity
+        android:id="@+id/settingsActivity"
+        android:name="com.example.zephyrus.SettingsActivity"
+        android:label="activity_settings"
+        tools:layout="@layout/activity_settings" />
 </navigation>

@@ -61,6 +61,10 @@ public class CardListActivity extends AnimatedActivity {
                     Intent c = new Intent(CardListActivity.this, JournalActivity.class);
                     startActivity(c, animationBundle);
                     break;
+                case R.id.settings_nav:
+                    Intent d = new Intent(CardListActivity.this, SettingsActivity.class);
+                    startActivity(d, animationBundle);
+                    break;
                 default:
                     break;
             }

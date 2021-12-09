@@ -71,6 +71,10 @@ public class CalendarActivity extends AnimatedActivity {
                     Intent c = new Intent(CalendarActivity.this, JournalActivity.class);
                     startActivity(c, animationBundle);
                     break;
+                case R.id.settings_nav:
+                    Intent d = new Intent(CalendarActivity.this, SettingsActivity.class);
+                    startActivity(d, animationBundle);
+                    break;
                 default:
                     break;
             }
