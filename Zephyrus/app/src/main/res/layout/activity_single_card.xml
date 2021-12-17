@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ActivityBackgroundColor"
+    tools:context=".SingleCard">
+
+    <com.wajahatkarim3.easyflipview.EasyFlipView
+        android:id="@+id/card4"
+        android:layout_width="wrap_content"
+        android:layout_height="284dp"
+        android:layout_marginBottom="15dp"
+        app:autoFlipBack="false"
+        app:autoFlipBackTime="1000"
+        app:flipDuration="400"
+        app:flipEnabled="true"
+        app:flipFrom="front"
+        app:flipOnTouch="true"
+        app:flipType="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/cardName4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageView
+            android:id="@+id/cardImageView4"
+            android:layout_width="196dp"
+            android:layout_height="267dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="170dp"
+            android:gravity="center"
+            app:srcCompat="@drawable/tarot_back_idea_1" />
+
+        <ImageView
+            android:id="@+id/card_front4"
+            android:layout_width="196dp"
+            android:layout_height="267dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="170dp"
+            android:gravity="center"
+            app:srcCompat="@drawable/tarot_back_idea_1" />
+
+    </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+    <TextView
+        android:id="@+id/cardName4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="382dp"
+        android:background="@drawable/bg_rounded"
+        android:textAlignment="center"
+        android:textColor="#FAF8F8"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card4" />
+</androidx.constraintlayout.widget.ConstraintLayout>

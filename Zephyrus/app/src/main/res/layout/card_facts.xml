@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ActivityBackgroundColor">
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/card_facts_navigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/NavBarBackground"
+        app:itemIconTint="@color/bottom_nav_color"
+        app:itemTextColor="@color/bottom_nav_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/navigation" />
+
+    <TextView
+        android:id="@+id/topMeaningTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/bg_rounded"
+        android:gravity="center_horizontal|center_vertical"
+        android:paddingLeft="@dimen/CaptionTextLeftRightPadding"
+        android:paddingTop="@dimen/CaptionTextTopBottomPadding"
+        android:paddingRight="@dimen/CaptionTextLeftRightPadding"
+        android:paddingBottom="@dimen/CaptionTextTopBottomPadding"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/centerMeaningTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card_" />
+
+    <TextView
+        android:id="@+id/centerMeaningTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/bg_rounded"
+        android:gravity="center_horizontal|center_vertical"
+        android:paddingLeft="@dimen/CaptionTextLeftRightPadding"
+        android:paddingTop="@dimen/CaptionTextTopBottomPadding"
+        android:paddingRight="@dimen/CaptionTextLeftRightPadding"
+        android:paddingBottom="@dimen/CaptionTextTopBottomPadding"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomMeaningTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topMeaningTextView" />
+
+    <TextView
+        android:id="@+id/bottomMeaningTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/bg_rounded"
+        android:gravity="center_horizontal|center_vertical"
+        android:paddingLeft="@dimen/CaptionTextLeftRightPadding"
+        android:paddingTop="@dimen/CaptionTextTopBottomPadding"
+        android:paddingRight="@dimen/CaptionTextLeftRightPadding"
+        android:paddingBottom="@dimen/CaptionTextTopBottomPadding"
+        android:text="Carrying on with something that is not good for us (and that we should end)"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/centerMeaningTextView" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="407dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/card_facts_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bottomMeaningTextView">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/descriptionTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="serif"
+                android:gravity="center_horizontal|center_vertical"
+                android:lineSpacingMultiplier="1.25"
+                android:text="Here is some sample text. If you can read this, then the tarot card did not load correctly. I am trying to pad this with words to be approximately the same length as a normal tarot card description. The quick brown fox jumped over the lazy dog. I could really go for some McNuggets right now. Here is some sample text. If you can read this, then the tarot card did not load correctly. I am trying to pad this with words to be approximately the same length as a normal tarot card description. The quick brown fox jumped over the lazy dog. I could really go for some McNuggets right now."
+                android:textAlignment="center"
+                android:textColor="@color/ActivityTextColor"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <com.wajahatkarim3.easyflipview.EasyFlipView
+        android:id="@+id/card_"
+        android:layout_width="wrap_content"
+        android:layout_height="256dp"
+        android:layout_marginBottom="15dp"
+        app:autoFlipBack="false"
+        app:autoFlipBackTime="1000"
+        app:flipDuration="400"
+        app:flipEnabled="true"
+        app:flipFrom="front"
+        app:flipOnTouch="true"
+        app:flipType="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/topMeaningTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageView
+            android:id="@+id/cardImageView_"
+            android:layout_width="160dp"
+            android:layout_height="240dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="170dp"
+            android:gravity="center"
+            app:srcCompat="@drawable/tarot_back_idea_1" />
+
+        <ImageView
+            android:id="@+id/card_front_"
+            android:layout_width="196dp"
+            android:layout_height="240dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="170dp"
+            android:gravity="center"
+            app:srcCompat="@drawable/tarot_back_idea_1" />
+
+    </com.wajahatkarim3.easyflipview.EasyFlipView>
+</androidx.constraintlayout.widget.ConstraintLayout>

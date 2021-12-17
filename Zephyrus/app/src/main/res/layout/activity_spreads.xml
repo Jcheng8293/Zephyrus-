@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/TEXT_3_CARD_SPREAD"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SpreadsActivity">
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/spreads_navigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/NavBarBackground"
+        app:itemIconTint="@color/bottom_nav_color"
+        app:itemTextColor="@color/bottom_nav_color"
+        app:labelVisibilityMode="auto"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/navigation" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/ActivityBackgroundColor"
+        app:layout_constraintBottom_toTopOf="@+id/spreads_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Three Card Spreads"
+                android:textAlignment="center"
+                android:textColor="@color/ActivityTextColor"
+                android:textSize="32sp" />
+
+            <Button
+                android:id="@+id/past_present_future_button"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:onClick="toThreeCardSpread"
+                android:text="Past, Present, Future"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/filler_button"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:onClick="toThreeCardSpread"
+                android:text="Filler"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Single Card Spreads"
+                android:textAlignment="center"
+                android:textColor="@color/ActivityTextColor"
+                android:textSize="32sp" />
+
+            <Button
+                android:id="@+id/yes_or_no_button"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:onClick="toSingleCard"
+                android:text="Yes or No"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
