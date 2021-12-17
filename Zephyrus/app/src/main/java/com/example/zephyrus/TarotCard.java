@@ -116,6 +116,7 @@ public class TarotCard implements Serializable {
         if (description == null) throw new IllegalArgumentException("description cannot be null");
 
         if (captions == null) throw new IllegalArgumentException("captions cannot be null");
+
         if (captions.length != 3)
             throw new IllegalArgumentException(
                     "The number of captions must be equal to 3, not " + captions.length);
